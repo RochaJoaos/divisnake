@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://df0u1w33tqsat"]
+
+[ext_resource type="Script" uid="uid://4agyk3lnmp1i" path="res://scenes/UI/cronometro/cronometro.gd" id="1_ly5n4"]
+
+[node name="Cronometro" type="Label"]
+offset_right = 78.0
+offset_bottom = 25.0
+text = "00:00"
+script = ExtResource("1_ly5n4")
