@@ -1,6 +1,6 @@
 extends Label
 
-@export var auto_start: bool = true   
+@export var auto_start: bool = false   
 var tempo: float = 0.0                
 var rodando: bool = false
 
