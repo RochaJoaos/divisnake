@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b68c3n2107rwn"]
 
-[ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://scenes/UI/cronometro/cronometro.tscn" id="1_5ldog"]
-[ext_resource type="Script" uid="uid://cdfhp7aag7y2k" path="res://scenes/UI/cronometro/teste_cronometro.gd" id="1_g7hsw"]
-[ext_resource type="PackedScene" uid="uid://d3vn26aqpjq3s" path="res://scenes/numeros/aleatorios/numeros.tscn" id="3_pxbbu"]
+[ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/cronometro.tscn" id="1_5ldog"]
+[ext_resource type="Script" uid="uid://cdfhp7aag7y2k" path="res://UI/cronometro/teste_cronometro.gd" id="1_g7hsw"]
+[ext_resource type="PackedScene" uid="uid://d3vn26aqpjq3s" path="res://numeros/aleatorios/numeros.tscn" id="3_pxbbu"]
 
 [node name="TesteCronometro" type="Node2D"]
 script = ExtResource("1_g7hsw")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3vn26aqpjq3s"]
 
-[ext_resource type="Script" uid="uid://yc1bjd6fqm51" path="res://scenes/numeros/aleatorios/numeros.gd" id="1_ykawq"]
+[ext_resource type="Script" uid="uid://yc1bjd6fqm51" path="res://numeros/aleatorios/numeros.gd" id="1_ykawq"]
 
 [node name="Numeros" type="Node2D"]
 script = ExtResource("1_ykawq")
