@@ -7,8 +7,8 @@ extends Node2D
 
 var valores: Array[int] = []
 
-func _ready() -> void:
-	gerar()
+#func _ready() -> void:
+#	gerar()
 
 func limpar() -> void:
 	for c in get_children():
