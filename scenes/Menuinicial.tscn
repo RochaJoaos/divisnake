@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7bv4apf7s0ya"]
+
+[ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="1_136tr"]
+[ext_resource type="Texture2D" uid="uid://dkvrjr7lhoq5x" path="res://assets/Backgroundteste1.png" id="1_cknpx"]
+[ext_resource type="Script" uid="uid://dgsdhof8wwhoy" path="res://scenes/MenuInicial.gd" id="1_nf3a5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf3a5"]
+texture = ExtResource("1_cknpx")
+modulate_color = Color(0.572988, 0.572988, 0.572988, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cknpx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke030"]
+bg_color = Color(0.0313726, 0.823529, 0.176471, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bgl"]
+bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Menuinicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nf3a5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nf3a5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -126.5
+offset_right = 201.5
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jogar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "Jogar
+"
+
+[node name="Opções" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "Opções"
+
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "Creditos"
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "Sair"
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.181
+anchor_right = 0.5
+anchor_bottom = 0.181
+offset_left = -161.0
+offset_top = -35.288
+offset_right = 163.0
+offset_bottom = 35.712
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_font_sizes/font_size = 70
+text = "Divisnake"
+
+[connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
+[connection signal="pressed" from="VBoxContainer/Opções" to="." method="Botao_opcoes_press"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="Botao_Creditos_press"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="Botao_sair_press"]
