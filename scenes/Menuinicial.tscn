@@ -1,15 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7bv4apf7s0ya"]
+[gd_scene load_steps=10 format=3 uid="uid://b7bv4apf7s0ya"]
 
 [ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="1_136tr"]
-[ext_resource type="Texture2D" uid="uid://dkvrjr7lhoq5x" path="res://assets/Backgroundteste1.png" id="1_cknpx"]
 [ext_resource type="Script" uid="uid://dgsdhof8wwhoy" path="res://scenes/MenuInicial.gd" id="1_nf3a5"]
+[ext_resource type="Texture2D" uid="uid://b5sjirsaji6ta" path="res://assets/sprites/background/menu-bg.jpg" id="2_ke030"]
+[ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_ke030"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf3a5"]
-texture = ExtResource("1_cknpx")
-modulate_color = Color(0.572988, 0.572988, 0.572988, 1)
+texture = ExtResource("2_ke030")
+modulate_color = Color(0.93845, 0.93845, 0.93845, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cknpx"]
+bg_color = Color(1, 1, 1, 0.780392)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttywu"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bgl"]
+bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -18,20 +36,12 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke030"]
-bg_color = Color(0.0313726, 0.823529, 0.176471, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bgl"]
-bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.00392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
@@ -55,15 +65,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_nf3a5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.455
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.455
 anchor_bottom = 0.5
-offset_left = -201.5
-offset_top = -126.5
-offset_right = 201.5
-offset_bottom = 126.5
+offset_left = -87.16
+offset_top = -44.0
+offset_right = 195.84
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,10 +84,10 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_136tr")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_ke030")
+theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ttywu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 text = "Jogar
@@ -90,7 +100,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_136tr")
+theme_override_fonts/font = ExtResource("3_ke030")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
@@ -105,8 +115,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_136tr")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_ke030")
+theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
@@ -120,8 +130,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_136tr")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_ke030")
+theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
@@ -135,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 0.181
 anchor_right = 0.5
 anchor_bottom = 0.181
-offset_left = -161.0
-offset_top = -35.288
-offset_right = 163.0
-offset_bottom = 35.712
+offset_left = -155.0
+offset_top = 47.712
+offset_right = 169.0
+offset_bottom = 118.712
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
