@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b7bv4apf7s0ya"]
 
 [ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="1_136tr"]
-[ext_resource type="Script" uid="uid://dgsdhof8wwhoy" path="res://scenes/MenuInicial.gd" id="1_nf3a5"]
+[ext_resource type="Script" path="res://scenes/MenuInicial.gd" id="1_nf3a5"]
 [ext_resource type="Texture2D" uid="uid://b5sjirsaji6ta" path="res://assets/sprites/background/menu-bg.jpg" id="2_ke030"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_ke030"]
 
