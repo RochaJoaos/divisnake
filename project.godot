@@ -14,3 +14,11 @@ config/name="DiviSnake"
 run/main_scene="uid://b7bv4apf7s0ya"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://autoloads/global.gd"
+
+[display]
+
+window/size/viewport_width=967

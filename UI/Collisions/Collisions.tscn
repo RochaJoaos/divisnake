@@ -6,13 +6,13 @@
 size = Vector2(12, 664)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik0vk"]
-size = Vector2(12, 667)
+size = Vector2(10, 657)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgwq"]
-size = Vector2(1164.5, 13)
+size = Vector2(965.25, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px4wn"]
-size = Vector2(1173.5, 11)
+size = Vector2(971.5, 11)
 
 [node name="Collisions" type="StaticBody2D"]
 script = ExtResource("1_e4u2s")
@@ -20,25 +20,25 @@ script = ExtResource("1_e4u2s")
 [node name="CollisionL" type="Area2D" parent="."]
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="CollisionL"]
-position = Vector2(-5, 328)
+position = Vector2(0, 320)
 shape = SubResource("RectangleShape2D_yobu6")
 
 [node name="CollisionR" type="Area2D" parent="."]
 
 [node name="CollisionRight" type="CollisionShape2D" parent="CollisionR"]
-position = Vector2(1156, 323.5)
+position = Vector2(960, 320)
 shape = SubResource("RectangleShape2D_ik0vk")
 
 [node name="CollisionB" type="Area2D" parent="."]
 
 [node name="CollisionBelow" type="CollisionShape2D" parent="CollisionB"]
-position = Vector2(577, 653)
+position = Vector2(480, 640)
 shape = SubResource("RectangleShape2D_xbgwq")
 
 [node name="CollisonT" type="Area2D" parent="."]
 
 [node name="CollisionTop" type="CollisionShape2D" parent="CollisonT"]
-position = Vector2(575.25, -4)
+position = Vector2(480, 0)
 shape = SubResource("RectangleShape2D_px4wn")
 
 [connection signal="body_entered" from="CollisionL" to="." method="_on_collision_l_body_entered"]

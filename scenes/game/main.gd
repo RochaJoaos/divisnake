@@ -3,6 +3,13 @@ extends Node2D
 @export var pivo_min:int = 10 # valor mínimo do pivô
 @export var pivo_max:int = 60 # valor máximo do pivô
 
+var move_dir:Vector2 = Vector2.RIGHT
+var time_between_moves:float = 100.0
+var time_since_last_move:float = 0
+var speed:float = 1000.0
+
+@onready var head: Head = %Head as Head
+@onready var bounds: Bounds = %Bounds as Bounds
 @onready var numeros :=  $Numeros         # referência para o node "numbers" (script dos números em tela)
 @onready var cronometro := $Cronometro # referência para o cronômetro
 @onready var pivo: Label = $Label_pivo    # referencia para a label que mostra o valor do pivô
@@ -83,3 +90,26 @@ func _atualizar_pivo_ui() -> void: # atualiza o label do pivo com o numero novo
 
 func _e_divisor(valor:int, pivo:int) -> bool: #retorna true se o valor é divisor do pivo
 	return valor != 0 and pivo % valor == 0  #garante que nao seja zero e ve se é divisor
+
+func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("ui_up"):
+		move_dir = Vector2.UP
+	elif Input.is_action_just_pressed("ui_right"):
+		move_dir = Vector2.RIGHT
+	elif Input.is_action_just_pressed("ui_down"):
+		move_dir = Vector2.DOWN
+	elif Input.is_action_just_pressed("ui_left"):
+		move_dir = Vector2.LEFT
+
+func _physics_process(delta: float) -> void:
+	time_since_last_move += delta * speed
+	if time_since_last_move >= time_between_moves:
+		update_snake()
+		time_since_last_move = 0
+
+func update_snake():
+	var new_pos:Vector2 = head.position + move_dir * Global.GRID_SIZE
+	new_pos = bounds.wrap_vector(new_pos)
+	head.move_to(new_pos)
+	pass

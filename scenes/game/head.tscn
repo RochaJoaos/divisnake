@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgmj4jxj8pt1t"]
+
+[ext_resource type="Script" uid="uid://g3ymbbf5f4a4" path="res://scenes/game/head.gd" id="1_hukeq"]
+[ext_resource type="Texture2D" uid="uid://bsdpss76ts7t5" path="res://assets/sprites/snake/yellow_head_down.png" id="2_pij62"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_akhm5"]
+radius = 32.0
+
+[node name="Head" type="Area2D"]
+script = ExtResource("1_hukeq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0382187, 0.032)
+texture = ExtResource("2_pij62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_akhm5")
