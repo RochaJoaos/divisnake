@@ -10,18 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func Botao_Jogar_press() -> void:
+func _on_reiniciar_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game/main.tscn")
-
-
-func Botao_opcoes_press() -> void:
-	get_tree().change_scene_to_file("res://scenes/Opções.tscn")
-
-
-func Botao_Creditos_press() -> void:
-	get_tree().change_scene_to_file("res://scenes/Creditos.tscn")
-
-
-func Botao_sair_press() -> void:
-	get_tree().quit()
+	
+func _on_menu_inicio_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Menuinicial.tscn")

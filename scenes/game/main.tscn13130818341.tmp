@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://uwff1ssnabtx"]
+[gd_scene load_steps=6 format=3 uid="uid://uwff1ssnabtx"]
 
 [ext_resource type="Script" uid="uid://cvknx7swx61ss" path="res://scenes/game/main.gd" id="1_llaio"]
 [ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/cronometro.tscn" id="2_yd8kv"]
 [ext_resource type="PackedScene" uid="uid://d3vn26aqpjq3s" path="res://numeros/aleatorios/numeros.tscn" id="3_uaf1y"]
 [ext_resource type="PackedScene" uid="uid://buducm0a32y71" path="res://UI/Collisions/Collisions.tscn" id="4_iba00"]
-[ext_resource type="PackedScene" uid="uid://dfelswph0i254" path="res://scenes/game/MoveSnake.tscn" id="4_uaf1y"]
-[ext_resource type="PackedScene" uid="uid://cd8ssws6hjow1" path="res://scenes/game/pause.tscn" id="6_j7lav"]
+[ext_resource type="PackedScene" uid="uid://dfelswph0i254" path="res://assets/sprites/snake/character_body_2d.tscn" id="4_uaf1y"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_llaio")
@@ -33,6 +32,8 @@ offset_bottom = 36.0
 [node name="Numeros" parent="." instance=ExtResource("3_uaf1y")]
 position = Vector2(3, 2)
 
+[node name="Snake" parent="." instance=ExtResource("4_uaf1y")]
+
 [node name="Label_resultado" type="Label" parent="."]
 offset_left = 430.0
 offset_top = 8.0
@@ -40,13 +41,6 @@ offset_right = 470.0
 offset_bottom = 31.0
 
 [node name="Collisions" parent="." instance=ExtResource("4_iba00")]
-
-[node name="UI_Pause" type="CanvasLayer" parent="."]
-
-[node name="Pause" parent="UI_Pause" instance=ExtResource("6_j7lav")]
-visible = false
-
-[node name="Snake" parent="." instance=ExtResource("4_uaf1y")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="numero_clicado" from="Numeros" to="." method="_on_numeros_numero_clicado"]
