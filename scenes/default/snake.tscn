@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://byhpr8h68e8j2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ceck6"]
+bg_color = Color(0.887483, 0.439231, 0.509216, 1)
+
+[node name="snake" type="Panel"]
+offset_right = 36.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ceck6")

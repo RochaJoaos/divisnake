@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxrwccys8ubc2"]
+
+[ext_resource type="Script" uid="uid://ba2u144qyusud" path="res://scenes/default/main.gd" id="1_5xj5a"]
+[ext_resource type="Texture2D" uid="uid://sbs8ins0xeq2" path="res://assets/sprites/arena/1.jpg" id="2_c0amh"]
+[ext_resource type="PackedScene" uid="uid://cyqpmftfk7u11" path="res://scenes/default/score.tscn" id="3_c0amh"]
+[ext_resource type="PackedScene" uid="uid://byhpr8h68e8j2" path="res://scenes/default/snake.tscn" id="4_58nc4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58nc4"]
+texture = ExtResource("2_c0amh")
+
+[node name="main" type="Node"]
+script = ExtResource("1_5xj5a")
+snake_scene = ExtResource("4_58nc4")
+
+[node name="score" parent="." instance=ExtResource("3_c0amh")]
+
+[node name="background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_58nc4")
+
+[node name="moveTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="moveTimer" to="." method="_on_move_timer_timeout"]
