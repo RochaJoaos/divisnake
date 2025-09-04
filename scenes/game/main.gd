@@ -7,6 +7,7 @@ extends Node2D
 @onready var cronometro := $Cronometro # referência para o cronômetro
 @onready var pivo: Label = $Label_pivo    # referencia para a label que mostra o valor do pivô
 @onready var resultado_label: Label = $Label_resultado # referência para a label que mostra "Correto" ou "Errado"
+@onready var score_script := $score
 
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
 var jogo_iniciado := false   # pra saber se o jogo já começou
@@ -38,7 +39,9 @@ func on_numero_comido(valor:int) -> void:
 	if not jogo_iniciado: return # se nn começou o jogo entao sai
 
 	#Checa se é correto ou errado e mostra no label
-	var acertou := _e_divisor(valor, pivo_atual) 
+	var acertou := _e_divisor(valor, pivo_atual)
+	if score_script:
+		score_script.resultado(acertou) 
 	if is_instance_valid(resultado_label):
 		if acertou:
 			resultado_label.text = "Correto!"
