@@ -7,6 +7,7 @@ signal numero_clicado(valor:int)
 @export var max_val:int = 99 # maximo de numeros (para os errados)
 @export var margem:int = 40  # bota uma margem pra longe das bordas
 @export var proporcao_corretos: float = 0.2       # 2% corretos ou seja de 5 numeros, 1 são certos
+@export var min_distancia: float = 50.0       # distância mínima entre números
 
 var valores: Array[int] = []   # números exibidos atualmente
 
@@ -52,15 +53,32 @@ func gerar(pivo:int) -> void:
 	valores = opcoes.duplicate() # aqui salva as opções na variavel valores
 
 	# cria as labels e deixa clicáveis para o teste
+	var ocupados: Array[Vector2] = []  # guarda posições já usadas
 	for v in opcoes: #pra cada valor em opcoes:
 		var lbl := Label.new() #nova label
 		lbl.text = str(v) # texto da label é o 'valor'
 		lbl.add_theme_font_size_override("font_size", 22) # tamanho da fonte
-		# vai colocar o texto respeitando o tamanho da tela e margem
-		lbl.position = Vector2(
-			randf_range(margem, tela.x - margem),
-			randf_range(margem, tela.y - margem)
-		)
+				# tenta achar uma posição que respeite a margem e a distância mínima
+		var posicao: Vector2
+		var tentativas := 0
+		while true:
+			posicao = Vector2(
+				randf_range(margem, max(0.0, tela.x - margem)),
+				randf_range(margem, max(0.0, tela.y - margem))
+			)
+
+			var valido := true
+			for usado in ocupados:
+				if posicao.distance_to(usado) < min_distancia:
+					valido = false
+					break
+
+			# se válido, ou se tentou demais (evitar loop infinito em tela lotada), aceita
+			if valido or tentativas > 100:
+				break
+			tentativas += 1
+		lbl.position = posicao
+		ocupados.append(posicao)
 
 		lbl.mouse_filter = Control.MOUSE_FILTER_STOP # pro mouse reconhecer o label
 		lbl.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND # cursor muda pra mãozinha
@@ -84,5 +102,4 @@ func _divisores_de(pivo:int) -> Array[int]:
 	for d in range(2, pivo): # se quiser incluir o pivo tbm: pivo + 1
 		if pivo % d == 0: # logica de divisao
 			ds.append(d) #adiciona na lista
-
 	return ds # retorna a lista de todos os divisores desse pivo.
