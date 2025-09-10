@@ -2,11 +2,11 @@ extends Node2D
 
 signal numero_clicado(valor:int)
 
-@export var qtd:int = 6 # determina a quatidade para os numeros em tela
-@export var min_val:int = 2  # valor minimo de numeros (para os errados)
-@export var max_val:int = 60 # maximo de numeros (para os errados)
+@export var qtd:int = 5 # determina a quatidade para os numeros em tela
+@export var min_val:int = 1  # valor minimo de numeros (para os errados)
+@export var max_val:int = 99 # maximo de numeros (para os errados)
 @export var margem:int = 40  # bota uma margem pra longe das bordas
-@export var proporcao_corretos: float = 0.33       # 33% corretos ou seja de 6 numeros, 2 são certos
+@export var proporcao_corretos: float = 0.2       # 2% corretos ou seja de 5 numeros, 1 são certos
 
 var valores: Array[int] = []   # números exibidos atualmente
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var pivo_min:int = 10 # valor mínimo do pivô
-@export var pivo_max:int = 60 # valor máximo do pivô
+@export var pivo_max:int = 99 # valor máximo do pivô
 
 @onready var numeros :=  $Numeros         # referência para o node "numbers" (script dos números em tela)
 @onready var cronometro := $Cronometro # referência para o cronômetro
