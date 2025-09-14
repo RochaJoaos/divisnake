@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://brsqps5rmp6tt"]
+
+[ext_resource type="Texture2D" uid="uid://cln2nvs682bfq" path="res://assets/sprites/background/escolha.jpg" id="1_qrm6j"]
+[ext_resource type="PackedScene" uid="uid://dytnsvivcwkmj" path="res://elements/button/btn-config/config.tscn" id="2_p10t2"]
+[ext_resource type="PackedScene" uid="uid://c0vesf8hj0t0d" path="res://elements/button/btn-ajuda/ajuda.tscn" id="3_jai32"]
+
+[sub_resource type="Theme" id="Theme_p10t2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jai32"]
+texture = ExtResource("1_qrm6j")
+
+[node name="ModoDeJogo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_p10t2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jai32")
+
+[node name="config" parent="." instance=ExtResource("2_p10t2")]
+layout_mode = 1
+offset_left = 1076.0
+offset_top = 571.0
+offset_right = -16.0
+offset_bottom = -17.0
+
+[node name="ajuda" parent="." instance=ExtResource("3_jai32")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = 1000.0
+offset_top = 571.0
+offset_right = -92.0
+offset_bottom = -17.0
