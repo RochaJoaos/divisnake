@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1xuvvnj5qrj"]
+
+[ext_resource type="Script" uid="uid://glj3utav78v6" path="res://elements/cards/singleplayer-card/singleplayer-card.gd" id="1_0t6k4"]
+[ext_resource type="Texture2D" uid="uid://f7r3gger82ih" path="res://assets/sprites/cards/singlepalyer.png" id="2_k4d71"]
+
+[node name="card" type="TextureButton"]
+offset_right = 239.0
+offset_bottom = 320.0
+script = ExtResource("1_0t6k4")
+
+[node name="Singlepalyer" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_k4d71")
+offset = Vector2(1000, 1330)
+
+[connection signal="pressed" from="." to="." method="single_on_pressed"]
