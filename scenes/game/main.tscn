@@ -1,15 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://uwff1ssnabtx"]
+[gd_scene load_steps=11 format=3 uid="uid://uwff1ssnabtx"]
 
 [ext_resource type="Script" uid="uid://cvknx7swx61ss" path="res://scenes/game/main.gd" id="1_llaio"]
-[ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/cronometro.tscn" id="2_yd8kv"]
+[ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/tempo.tscn" id="2_yd8kv"]
 [ext_resource type="PackedScene" uid="uid://d3vn26aqpjq3s" path="res://numeros/aleatorios/numeros.tscn" id="3_uaf1y"]
 [ext_resource type="PackedScene" uid="uid://buducm0a32y71" path="res://UI/Collisions/Collisions.tscn" id="4_iba00"]
-[ext_resource type="PackedScene" uid="uid://dfelswph0i254" path="res://scenes/game/MoveSnake.tscn" id="4_uaf1y"]
 [ext_resource type="PackedScene" uid="uid://cd8ssws6hjow1" path="res://scenes/game/pause.tscn" id="6_j7lav"]
+[ext_resource type="PackedScene" uid="uid://dqyivelr1p5yg" path="res://scenes/game/snake/head-snake.tscn" id="7_5v64u"]
 [ext_resource type="PackedScene" uid="uid://cyqpmftfk7u11" path="res://scenes/default/score.tscn" id="7_g38uy"]
+[ext_resource type="PackedScene" uid="uid://b353ituo5j5ix" path="res://UI/cronometro/cronometro.tscn" id="8_5v64u"]
+[ext_resource type="PackedScene" uid="uid://cyjibhpyvtwrc" path="res://elements/life/life.tscn" id="9_8aysu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v64u"]
+bg_color = Color(0.0751402, 0.212312, 0.0550049, 0.529412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_llaio")
+
+[node name="Collisions" parent="." instance=ExtResource("4_iba00")]
 
 [node name="Button" type="Button" parent="."]
 offset_left = 521.0
@@ -19,20 +30,35 @@ offset_bottom = 391.0
 text = "Começar
 "
 
+[node name="cronometro" parent="." instance=ExtResource("8_5v64u")]
+offset_left = 20.0
+offset_top = 265.0
+offset_right = 20.0
+offset_bottom = 265.0
+
 [node name="Cronometro" parent="." instance=ExtResource("2_yd8kv")]
-offset_left = 537.0
-offset_top = 8.0
-offset_right = 615.0
-offset_bottom = 33.0
+offset_left = 107.0
+offset_top = 262.0
+offset_right = 189.0
+offset_bottom = 307.0
+
+[node name="pivo" type="Panel" parent="."]
+offset_left = 20.0
+offset_top = 36.0
+offset_right = 200.0
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5v64u")
 
 [node name="Label_pivo" type="Label" parent="."]
-offset_left = 625.0
-offset_top = 13.0
-offset_right = 665.0
-offset_bottom = 36.0
+offset_left = 60.0
+offset_top = 45.0
+offset_right = 160.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 88
+text = "00"
 
 [node name="Numeros" parent="." instance=ExtResource("3_uaf1y")]
-position = Vector2(3, 2)
+position = Vector2(17, 10)
 
 [node name="Label_resultado" type="Label" parent="."]
 offset_left = 430.0
@@ -40,20 +66,25 @@ offset_top = 8.0
 offset_right = 470.0
 offset_bottom = 31.0
 
-[node name="Collisions" parent="." instance=ExtResource("4_iba00")]
-
 [node name="UI_Pause" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="UI_Pause" instance=ExtResource("6_j7lav")]
 visible = false
 
-[node name="Snake" parent="." instance=ExtResource("4_uaf1y")]
-
 [node name="score" parent="." instance=ExtResource("7_g38uy")]
-offset_left = -36.0
-offset_top = 26.0
-offset_right = -36.0
-offset_bottom = 26.0
+offset_left = 20.0
+offset_top = 185.0
+offset_right = 20.0
+offset_bottom = 185.0
+
+[node name="snake" parent="." instance=ExtResource("7_5v64u")]
+position = Vector2(576, 288)
+
+[node name="life" parent="." instance=ExtResource("9_8aysu")]
+offset_left = 48.0
+offset_top = 338.0
+offset_right = 48.0
+offset_bottom = 338.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="numero_clicado" from="Numeros" to="." method="_on_numeros_numero_clicado"]

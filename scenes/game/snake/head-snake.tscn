@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqyivelr1p5yg"]
+
+[ext_resource type="Script" uid="uid://d0apcjcvedhcp" path="res://scenes/game/snake/move_snake.gd" id="1_ps8rd"]
+[ext_resource type="Texture2D" uid="uid://dg3rux0rrgdmv" path="res://assets/sprites/snake/head/yellow_head_right.png" id="2_ps8rd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps8rd"]
+size = Vector2(36, 36)
+
+[node name="snake" type="CharacterBody2D"]
+script = ExtResource("1_ps8rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.036, 0.036)
+texture = ExtResource("2_ps8rd")
+offset = Vector2(500, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 18)
+shape = SubResource("RectangleShape2D_ps8rd")

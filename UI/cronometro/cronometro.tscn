@@ -1,9 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://df0u1w33tqsat"]
+[gd_scene load_steps=3 format=3 uid="uid://b353ituo5j5ix"]
 
-[ext_resource type="Script" uid="uid://4agyk3lnmp1i" path="res://UI/cronometro/cronometro.gd" id="1_ly5n4"]
+[ext_resource type="Texture2D" uid="uid://dds40qn7xc6d5" path="res://assets/icons/timer.png" id="1_3qpme"]
 
-[node name="Cronometro" type="Label"]
-offset_right = 78.0
-offset_bottom = 25.0
-text = "00:00"
-script = ExtResource("1_ly5n4")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufoas"]
+bg_color = Color(0.351376, 0.688624, 0.385954, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="cronometro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufoas")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, 20)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_3qpme")

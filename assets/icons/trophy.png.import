@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3rux0rrgdmv"
-path="res://.godot/imported/yellow_head_right.png-d4275d6583e4da4da955e99f17d6ce06.ctex"
+uid="uid://b2fgn5mtlgbgl"
+path="res://.godot/imported/trophy.png-68d4dea9971d4e094979ce07273dbe42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/snake/yellow_head_right.png"
-dest_files=["res://.godot/imported/yellow_head_right.png-d4275d6583e4da4da955e99f17d6ce06.ctex"]
+source_file="res://assets/icons/trophy.png"
+dest_files=["res://.godot/imported/trophy.png-68d4dea9971d4e094979ce07273dbe42.ctex"]
 
 [params]
 

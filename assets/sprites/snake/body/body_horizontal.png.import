@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yljylwgn3p8y"
-path="res://.godot/imported/yellow_tail_top.png-aa5f0872e6dcfd7fc7d12968819daee8.ctex"
+uid="uid://bdhhlq7a4bsc"
+path="res://.godot/imported/body_horizontal.png-4200b0f9b82aa283dbd83c3b6ae66823.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/snake/yellow_tail_top.png"
-dest_files=["res://.godot/imported/yellow_tail_top.png-aa5f0872e6dcfd7fc7d12968819daee8.ctex"]
+source_file="res://assets/sprites/snake/body/body_horizontal.png"
+dest_files=["res://.godot/imported/body_horizontal.png-4200b0f9b82aa283dbd83c3b6ae66823.ctex"]
 
 [params]
 

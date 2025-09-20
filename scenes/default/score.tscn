@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyqpmftfk7u11"]
+[gd_scene load_steps=4 format=3 uid="uid://cyqpmftfk7u11"]
 
 [ext_resource type="Script" uid="uid://brud7shjh88ls" path="res://scenes/default/score.gd" id="1_nyofb"]
+[ext_resource type="Texture2D" uid="uid://b2fgn5mtlgbgl" path="res://assets/icons/trophy.png" id="2_n5u20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_romlw"]
 bg_color = Color(0.320208, 0.692341, 0.404721, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0)
 
 [node name="score" type="Control"]
 layout_mode = 3
@@ -12,17 +18,22 @@ script = ExtResource("1_nyofb")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 46.0
-offset_right = 197.0
-offset_bottom = 140.0
+offset_right = 180.0
+offset_bottom = 70.0
+pivot_offset = Vector2(116, 104)
 theme_override_styles/panel = SubResource("StyleBoxFlat_romlw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 50.0
-offset_right = 155.0
-offset_bottom = 133.0
+offset_left = 69.0
+offset_top = -8.0
+offset_right = 172.0
+offset_bottom = 75.0
+pivot_offset = Vector2(52, 42)
 theme_override_font_sizes/font_size = 60
 text = "000"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34, 35)
+scale = Vector2(0.638, 0.6)
+texture = ExtResource("2_n5u20")

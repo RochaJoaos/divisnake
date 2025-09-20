@@ -8,6 +8,8 @@ extends Node2D
 @onready var pivo: Label = $Label_pivo    # referencia para a label que mostra o valor do pivô
 @onready var resultado_label: Label = $Label_resultado # referência para a label que mostra "Correto" ou "Errado"
 @onready var score_script := $score
+@onready var snake := $snake
+@onready var life := $life
 
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
 var jogo_iniciado := false   # pra saber se o jogo já começou
@@ -16,12 +18,13 @@ func _ready() -> void:
 	randomize() # embaralha o gerador de números aleatórios pra evitar repetições 
 	numeros.limpar() # limpa qualquer número que esteja na tela (pegando a função do scrript do numeros)
 	if is_instance_valid(pivo): # se o label do pivô existe
-		pivo.text = "" 
+		pivo.text = "00" 
 
 func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	if jogo_iniciado: return # se ja começou sai
 	jogo_iniciado = true # se nn o jogo_iniciado é dado como verdadeiro
-
+	snake.start = jogo_iniciado # se o jogo iniciar a cobra começa a se mover
+	
 	cronometro.start() # start é a função no script do cronometro que diz pra começar o cronometro
 	_sortear_pivo() # chama a função para sortear o pivo
 	numeros.gerar(pivo_atual) # chama o gerar do numeros com o pivo q foi sorteado antes
@@ -47,8 +50,7 @@ func on_numero_comido(valor:int) -> void:
 			resultado_label.text = "Correto!"
 			resultado_label.modulate = Color(0, 1, 0)   # muda a cor pra verde
 		else:
-			resultado_label.text = "Errado!"
-			resultado_label.modulate = Color(1, 0, 0)   #muda a cor pra vermelho
+			life.your_life -= 1
 
 	# agora troca o pivô e renova os números 
 	_sortear_pivo() #sorteia o pivo
@@ -82,7 +84,7 @@ func _num_primo(n:int) -> bool: # funcao q retorna true se o 'n' for primo
 
 func _atualizar_pivo_ui() -> void: # atualiza o label do pivo com o numero novo 
 	if is_instance_valid(pivo):
-		pivo.text = "Pivô: %d" % pivo_atual
+		pivo.text = "%d" % pivo_atual
 
 func _e_divisor(valor:int, pivo:int) -> bool: #retorna true se o valor é divisor do pivo
 	return valor != 0 and pivo % valor == 0  #garante que nao seja zero e ve se é divisor

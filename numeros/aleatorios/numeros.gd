@@ -22,7 +22,8 @@ func gerar(pivo:int) -> void:
 
 	var tela := get_viewport_rect().size # pega o tamanho da tela 
 	var corretos := _divisores_de(pivo) # coloca os n° corretos na variavel corretos
-
+	
+	print(tela)
 	if corretos.is_empty(): 
 		push_warning("Nenhum divisor encontrado para o pivô") # caso nao tenha divisor(numero primo)
 		return

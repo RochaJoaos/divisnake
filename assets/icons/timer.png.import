@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdpss76ts7t5"
-path="res://.godot/imported/yellow_head_down.png-07ae29211d44611b779ca47d98e85242.ctex"
+uid="uid://dds40qn7xc6d5"
+path="res://.godot/imported/timer.png-3260062f25a14dcc73441fb4f5d33ce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/snake/yellow_head_down.png"
-dest_files=["res://.godot/imported/yellow_head_down.png-07ae29211d44611b779ca47d98e85242.ctex"]
+source_file="res://assets/icons/timer.png"
+dest_files=["res://.godot/imported/timer.png-3260062f25a14dcc73441fb4f5d33ce5.ctex"]
 
 [params]
 

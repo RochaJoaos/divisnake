@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://derneo52pp5sy"
-path="res://.godot/imported/yellow_head_up.png-9c5a3cfb6e247fdcec62f59438faf9de.ctex"
+uid="uid://bjl5ecs2v24x2"
+path="res://.godot/imported/yellow_bottomleft.png-24b050069eb1fa11167cda605bcfd9dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/snake/yellow_head_up.png"
-dest_files=["res://.godot/imported/yellow_head_up.png-9c5a3cfb6e247fdcec62f59438faf9de.ctex"]
+source_file="res://assets/sprites/snake/vertice/yellow_bottomleft.png"
+dest_files=["res://.godot/imported/yellow_bottomleft.png-24b050069eb1fa11167cda605bcfd9dc.ctex"]
 
 [params]
 

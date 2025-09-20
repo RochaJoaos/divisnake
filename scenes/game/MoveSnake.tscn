@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfelswph0i254"]
 
 [ext_resource type="Script" uid="uid://xgyji4qvjhae" path="res://scenes/game/MoveSnake.gd" id="1_iwtgm"]
-[ext_resource type="Texture2D" uid="uid://bsdpss76ts7t5" path="res://assets/sprites/snake/yellow_head_down.png" id="1_sha6q"]
+[ext_resource type="Texture2D" uid="uid://bsdpss76ts7t5" path="res://assets/sprites/snake/head/yellow_head_down.png" id="1_sha6q"]
 
 [node name="Snake" type="CharacterBody2D" groups=["snake"]]
 script = ExtResource("1_iwtgm")
