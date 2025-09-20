@@ -21,9 +21,14 @@ func gerar(pivo:int) -> void:
 	limpar() # sempre chama o limpar antes de gerar novos numeros
 
 	var tela := get_viewport_rect().size # pega o tamanho da tela 
+	var cell_size : int = 36
+	var min_screen_x : int = 216
+	var min_screen_y : int = 36
+	var max_screen_size := Vector2(19, 15)
+
+	
 	var corretos := _divisores_de(pivo) # coloca os n° corretos na variavel corretos
 	
-	print(tela)
 	if corretos.is_empty(): 
 		push_warning("Nenhum divisor encontrado para o pivô") # caso nao tenha divisor(numero primo)
 		return
@@ -63,11 +68,13 @@ func gerar(pivo:int) -> void:
 		var posicao: Vector2
 		var tentativas := 0
 		while true:
+			var randomx : int = randi_range(0, max_screen_size.x)
+			var randomy : int = randi_range(0, max_screen_size.y)
 			posicao = Vector2(
-				randf_range(margem, max(0.0, tela.x - margem)),
-				randf_range(margem, max(0.0, tela.y - margem))
+				cell_size * randomx + min_screen_x - 11,
+				cell_size * randomy + min_screen_y - 7
 			)
-
+			print(posicao)
 			var valido := true
 			for usado in ocupados:
 				if posicao.distance_to(usado) < min_distancia:
