@@ -9,6 +9,8 @@ signal numero_clicado(valor:int)
 @export var proporcao_corretos: float = 0.2       # 2% corretos ou seja de 5 numeros, 1 são certos
 @export var min_distancia: float = 50.0       # distância mínima entre números
 
+var numero_scene = preload("res://numeros/aleatorios/Numero.tscn")
+
 var valores: Array[int] = []   # números exibidos atualmente
 
 func limpar() -> void:
@@ -61,10 +63,10 @@ func gerar(pivo:int) -> void:
 	# cria as labels e deixa clicáveis para o teste
 	var ocupados: Array[Vector2] = []  # guarda posições já usadas
 	for v in opcoes: #pra cada valor em opcoes:
-		var lbl := Label.new() #nova label
-		lbl.text = str(v) # texto da label é o 'valor'
-		lbl.add_theme_font_size_override("font_size", 22) # tamanho da fonte
-				# tenta achar uma posição que respeite a margem e a distância mínima
+		var num = numero_scene.instantiate()
+		num.valor = v # texto da label é o 'valor'
+		num.get_node("Label").text = str(v) # coloca o número no label
+		# tenta achar uma posição que respeite a margem e a distância mínima
 		var posicao: Vector2
 		var tentativas := 0
 		while true:
@@ -85,19 +87,12 @@ func gerar(pivo:int) -> void:
 			if valido or tentativas > 100:
 				break
 			tentativas += 1
-		lbl.position = posicao
+		num.position = posicao
 		ocupados.append(posicao)
+		# conecta o sinal do número pra repassar pro script principal
+		num.numero_comido.connect(func(valor): numero_clicado.emit(valor))
 
-		lbl.mouse_filter = Control.MOUSE_FILTER_STOP # pro mouse reconhecer o label
-		lbl.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND # cursor muda pra mãozinha
-		# quando o label é clicado com o mouse, emite o sinal numero_clicado junto com o valor dele.
-		lbl.gui_input.connect(func(event: InputEvent) -> void: 
-	#se o evento é um clique do mouse e quando acaba de ser clicado e se foi o botao esquerdo do mouse:
-			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-				numero_clicado.emit(v) # emite o sinal com o valor 'v'
-		)
-
-		add_child(lbl) # adiciona esse label como nó filho do node2d
+		add_child(num) # adiciona esse label como nó filho do node2d
 
 # retorna os valores atuais na tela 
 func get_valores() -> Array[int]:

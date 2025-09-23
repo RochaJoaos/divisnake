@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgyd8hxmiqu1"]
+
+[ext_resource type="Script" uid="uid://ckwt7cacimigu" path="res://numeros/aleatorios/numero.gd" id="1_618te"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_618te"]
+size = Vector2(22, 23)
+
+[node name="Numero" type="Area2D"]
+script = ExtResource("1_618te")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 11.5)
+shape = SubResource("RectangleShape2D_618te")

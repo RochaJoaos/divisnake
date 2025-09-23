@@ -27,7 +27,7 @@ func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	
 	cronometro.start() # start é a função no script do cronometro que diz pra começar o cronometro
 	_sortear_pivo() # chama a função para sortear o pivo
-	numeros.gerar(pivo_atual) # chama o gerar do numeros com o pivo q foi sorteado antes
+	numeros.call_deferred("gerar", pivo_atual) # chama o gerar do numeros com o pivo q foi sorteado antes
 	_atualizar_pivo_ui() # chama a função pra atualizar o texto e label do pivo.
 
 	$Button.disabled = true # desabilita o botao de começar pra nn poder mais clicar
@@ -54,7 +54,7 @@ func on_numero_comido(valor:int) -> void:
 
 	# agora troca o pivô e renova os números 
 	_sortear_pivo() #sorteia o pivo
-	numeros.gerar(pivo_atual) # gera os numeros aleatórios de novo
+	numeros.call_deferred("gerar", pivo_atual) # gera os numeros aleatórios de novo
 	_atualizar_pivo_ui() # atualiza o texto do label do pivo
 
 
