@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7bv4apf7s0ya"]
+[gd_scene load_steps=11 format=3 uid="uid://b7bv4apf7s0ya"]
 
-[ext_resource type="Texture2D" uid="uid://b5sjirsaji6ta" path="res://assets/sprites/background/menu.jpg" id="2_m5qsp"]
+[ext_resource type="Texture2D" uid="uid://dkecmccv0u1cp" path="res://assets/sprites/background/testecinza.png" id="1_5fx2x"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_5fx2x"]
+[ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="3_m5qsp"]
+[ext_resource type="StyleBox" uid="uid://d3v8pofwlsoy7" path="res://assets/styles/hover-laranja.tres" id="3_w47o8"]
+[ext_resource type="Texture2D" uid="uid://dcecitsfqerb2" path="res://assets/icons/logo-1.png" id="4_m13hv"]
 [ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="4_w47o8"]
 
 [sub_resource type="GDScript" id="GDScript_xssau"]
@@ -34,25 +37,21 @@ func Botao_sair_press() -> void:
 "
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf3a5"]
-texture = ExtResource("2_m5qsp")
-modulate_color = Color(0.93845, 0.93845, 0.93845, 1)
+texture = ExtResource("1_5fx2x")
+modulate_color = Color(0.29, 0.29, 0.29, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cknpx"]
-bg_color = Color(1, 1, 1, 0.780392)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttywu"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 5
+border_color = Color(0.42, 0.42, 0.42, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 2.645)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bgl"]
 bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
@@ -60,16 +59,6 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke030"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.00392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
@@ -115,7 +104,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ttywu")
+theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 text = "Jogar
@@ -131,7 +120,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 text = "Opções"
@@ -146,7 +135,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 text = "Creditos"
@@ -161,22 +150,103 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ke030")
+theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 text = "Sair"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.5
+anchor_right = 0.455
+anchor_bottom = 0.5
+offset_left = -87.16
+offset_top = -44.0
+offset_right = 195.84
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jogar" type="Button" parent="VBoxContainer2"]
+modulate = Color(1, 0.883333, 0, 1)
+light_mask = 0
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m5qsp")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "JOGAR"
+
+[node name="Opções" type="Button" parent="VBoxContainer2"]
+modulate = Color(1, 0.882353, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m5qsp")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "OPÇÕES"
+
+[node name="Creditos" type="Button" parent="VBoxContainer2"]
+modulate = Color(1, 0.882353, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m5qsp")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "CREDITOS"
+
+[node name="Sair" type="Button" parent="VBoxContainer2"]
+modulate = Color(1, 0.882353, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_m5qsp")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+text = "SAIR"
+
 [node name="Titulo" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.181
 anchor_right = 0.5
 anchor_bottom = 0.181
-offset_left = -155.0
-offset_top = 47.712
-offset_right = 169.0
-offset_bottom = 118.712
+offset_left = -137.0
+offset_top = 36.712
+offset_right = 187.0
+offset_bottom = 107.712
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -186,7 +256,16 @@ theme_override_fonts/font = ExtResource("4_w47o8")
 theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
+[node name="Logo-1" type="Sprite2D" parent="."]
+position = Vector2(575, 143.125)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("4_m13hv")
+
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
 [connection signal="pressed" from="VBoxContainer/Opções" to="." method="Botao_opcoes_press"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="Botao_Creditos_press"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="Botao_sair_press"]
+[connection signal="pressed" from="VBoxContainer2/Jogar" to="." method="Botao_Jogar_press"]
+[connection signal="pressed" from="VBoxContainer2/Opções" to="." method="Botao_opcoes_press"]
+[connection signal="pressed" from="VBoxContainer2/Creditos" to="." method="Botao_Creditos_press"]
+[connection signal="pressed" from="VBoxContainer2/Sair" to="." method="Botao_sair_press"]

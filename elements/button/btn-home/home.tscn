@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1krvh5kvdjnt"]
+[gd_scene load_steps=5 format=3 uid="uid://d1krvh5kvdjnt"]
 
 [ext_resource type="Texture2D" uid="uid://cy58bub1jnoib" path="res://assets/icons/home.png" id="1_c7ers"]
+[ext_resource type="StyleBox" uid="uid://d3v8pofwlsoy7" path="res://assets/styles/hover-laranja.tres" id="1_j7gmh"]
 [ext_resource type="Script" uid="uid://bjc4eivitx263" path="res://elements/button/btn-home/home.gd" id="1_sy3nw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy3nw"]
-bg_color = Color(0.948247, 0.382634, 0.468409, 1)
+bg_color = Color(1, 0.882353, 0, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 5
+border_color = Color(1, 0.533333, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -13,6 +18,7 @@ corner_radius_bottom_left = 10
 [node name="home" type="Button"]
 offset_right = 60.0
 offset_bottom = 60.0
+theme_override_styles/hover = ExtResource("1_j7gmh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sy3nw")
 script = ExtResource("1_sy3nw")
 
