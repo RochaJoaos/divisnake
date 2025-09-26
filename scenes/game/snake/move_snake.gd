@@ -5,6 +5,8 @@ var cell_size: int = 36
 var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @export var start : bool = false
 @onready var head : Sprite2D = $Sprite2D
+@onready var Pause: Control = $"../UI_Pause/Pause"
+@export var localsnake := Vector2(2, 4)
 
 func _ready():
 	# Garante que a cobra comece alinhada ao grid
@@ -34,3 +36,9 @@ func get_input():
 func move_snake():
 	if start:
 		position += direction * cell_size
+		
+func Die():
+	get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
+	
+func pause():
+	Pause.visible = true

@@ -6,15 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps8rd"]
 size = Vector2(36, 36)
 
-[node name="snake" type="CharacterBody2D"]
+[node name="snake" type="CharacterBody2D" groups=["snake"]]
 script = ExtResource("1_ps8rd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["snake"]]
 position = Vector2(0, 2.38419e-07)
 scale = Vector2(0.036, 0.036)
 texture = ExtResource("2_ps8rd")
 offset = Vector2(500, 500)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["snake"]]
 position = Vector2(18, 18)
 shape = SubResource("RectangleShape2D_ps8rd")
