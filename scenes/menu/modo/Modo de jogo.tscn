@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://brsqps5rmp6tt"]
 
-[ext_resource type="Texture2D" uid="uid://cln2nvs682bfq" path="res://assets/sprites/background/escolha.jpg" id="1_qrm6j"]
+[ext_resource type="Texture2D" uid="uid://dvw5aud3g8top" path="res://assets/sprites/background/cinza-escuro.png" id="1_byju4"]
 [ext_resource type="PackedScene" uid="uid://dytnsvivcwkmj" path="res://elements/button/btn-config/config.tscn" id="2_p10t2"]
 [ext_resource type="PackedScene" uid="uid://c0vesf8hj0t0d" path="res://elements/button/btn-ajuda/ajuda.tscn" id="3_jai32"]
 [ext_resource type="PackedScene" uid="uid://cwapk460lwwh6" path="res://elements/cards/multiplayer-card/multiplayer.tscn" id="3_ulgee"]
@@ -10,7 +10,8 @@
 [sub_resource type="Theme" id="Theme_p10t2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jai32"]
-texture = ExtResource("1_qrm6j")
+texture = ExtResource("1_byju4")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="ModoDeJogo" type="Control"]
 layout_mode = 3

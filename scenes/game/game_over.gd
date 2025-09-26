@@ -14,4 +14,4 @@ func _on_reiniciar_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game/main.tscn")
 	
 func _on_menu_inicio_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Menuinicial.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu/inicial/Menuinicial.tscn")
