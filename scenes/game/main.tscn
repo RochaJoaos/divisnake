@@ -79,14 +79,14 @@ offset_top = 185.0
 offset_right = 20.0
 offset_bottom = 185.0
 
-[node name="snake" parent="." instance=ExtResource("7_5v64u")]
-position = Vector2(612, 288)
-
 [node name="life" parent="." instance=ExtResource("9_8aysu")]
 offset_left = 48.0
 offset_top = 338.0
 offset_right = 48.0
 offset_bottom = 338.0
+
+[node name="snake" parent="." instance=ExtResource("7_5v64u")]
+position = Vector2(432, 180)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="numero_clicado" from="Numeros" to="." method="_on_numeros_numero_clicado"]

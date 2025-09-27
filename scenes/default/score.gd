@@ -20,6 +20,7 @@ func reset() -> void:
 	emit_signal("score_aumenta", pontos)
 
 func resultado(acertou: bool) -> void:
+	print("hello world")
 	if acertou:
 		pontos += ponto_cada_acerto
 		_atualiza_label()
@@ -27,6 +28,7 @@ func resultado(acertou: bool) -> void:
 
 		if pontos >= ponto_total:
 			emit_signal("vitoria_score", pontos)
+			get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
 
 func _atualiza_label() -> void:
 	if is_instance_valid(score_label):

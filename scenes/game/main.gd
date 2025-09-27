@@ -19,6 +19,7 @@ func _ready() -> void:
 	numeros.limpar() # limpa qualquer número que esteja na tela (pegando a função do scrript do numeros)
 	if is_instance_valid(pivo): # se o label do pivô existe
 		pivo.text = "00" 
+	print(snake.position)
 
 func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	if jogo_iniciado: return # se ja começou sai

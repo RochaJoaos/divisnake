@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dg3rux0rrgdmv" path="res://assets/sprites/snake/head/yellow_head_right.png" id="2_ps8rd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps8rd"]
-size = Vector2(36, 36)
+size = Vector2(34, 34)
 
 [node name="snake" type="CharacterBody2D" groups=["snake"]]
 script = ExtResource("1_ps8rd")
