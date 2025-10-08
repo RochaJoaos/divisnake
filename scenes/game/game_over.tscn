@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5hqrq0nxx1vk"]
+[gd_scene load_steps=15 format=3 uid="uid://b5hqrq0nxx1vk"]
 
 [ext_resource type="Script" uid="uid://50prxkjtyan5" path="res://scenes/game/game_over.gd" id="1_b3plk"]
-[ext_resource type="Texture2D" uid="uid://b5sjirsaji6ta" path="res://assets/sprites/background/menu.jpg" id="2_ttmkv"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_e80lq"]
-[ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="4_jhs4t"]
+[ext_resource type="Texture2D" uid="uid://ba78h6n8efrev" path="res://assets/sprites/snake/tail/yellow_tail_right.png" id="4_e80lq"]
+[ext_resource type="Texture2D" uid="uid://bdhhlq7a4bsc" path="res://assets/sprites/snake/body/body_horizontal.png" id="5_jhs4t"]
+[ext_resource type="Texture2D" uid="uid://csvj7wgm7q514" path="res://assets/sprites/snake/died/death_right_04.png" id="6_62e75"]
+[ext_resource type="PackedScene" uid="uid://cyqpmftfk7u11" path="res://scenes/default/score.tscn" id="7_jhs4t"]
+[ext_resource type="PackedScene" uid="uid://b353ituo5j5ix" path="res://UI/cronometro/cronometro.tscn" id="8_62e75"]
+[ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/tempo.tscn" id="9_gjx6a"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e75"]
-texture = ExtResource("2_ttmkv")
-modulate_color = Color(0.93845, 0.93845, 0.93845, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3plk"]
+bg_color = Color(0.7083146, 0.961067, 0.7444635, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjx6a"]
-bg_color = Color(1, 1, 1, 0.780392)
+bg_color = Color(0.32156864, 0.69411767, 0.40392157, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -18,13 +21,6 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ianvi"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f65sg"]
 bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
@@ -35,6 +31,13 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ianvi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jktpp"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
@@ -44,6 +47,13 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0, 0, 0, 0.00392157)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdedy"]
+bg_color = Color(0.32156864, 0.69411767, 0.40392157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -63,7 +73,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_62e75")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3plk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -72,64 +82,127 @@ anchor_left = 0.455
 anchor_top = 0.5
 anchor_right = 0.455
 anchor_bottom = 0.5
-offset_left = -87.16
-offset_top = 22.0
-offset_right = 195.84
-offset_bottom = 158.0
+offset_left = -65.160034
+offset_top = -9.0
+offset_right = 210.83997
+offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Reiniciar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_e80lq")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ianvi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjx6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ianvi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
 text = "Reiniciar
+"
+
+[node name="Regras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e80lq")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjx6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ianvi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
+text = "Regras
+"
+
+[node name="Configuração" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e80lq")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjx6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ianvi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
+text = "Configuração
 "
 
 [node name="Menu_Inicio" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_e80lq")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jktpp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjx6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f65sg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jktpp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjx6a")
 text = "Menu Inicial"
 
-[node name="Titulo" type="Label" parent="."]
+[node name="snake" type="Node2D" parent="."]
+position = Vector2(482, 81)
+
+[node name="tail" type="Sprite2D" parent="snake"]
+position = Vector2(25, 25)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_e80lq")
+
+[node name="body" type="Sprite2D" parent="snake"]
+position = Vector2(80, 25)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_jhs4t")
+
+[node name="body2" type="Sprite2D" parent="snake"]
+position = Vector2(140, 25)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_jhs4t")
+
+[node name="head" type="Sprite2D" parent="snake"]
+position = Vector2(200, 25)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_62e75")
+
+[node name="score" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 150.0
+offset_right = 736.0
+offset_bottom = 310.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdedy")
+
+[node name="score" parent="score" instance=ExtResource("7_jhs4t")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 22.0
+offset_right = 48.0
+offset_bottom = 22.0
+
+[node name="cronometro" parent="score" instance=ExtResource("8_62e75")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.181
-anchor_right = 0.5
-anchor_bottom = 0.181
-offset_left = -155.0
-offset_top = 47.712
-offset_right = 169.0
-offset_bottom = 118.712
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 8
-theme_override_constants/shadow_offset_y = 3
-theme_override_fonts/font = ExtResource("4_jhs4t")
-theme_override_font_sizes/font_size = 70
-text = "Game Over"
+offset_left = 58.0
+offset_top = 93.0
+offset_right = 58.0
+offset_bottom = 93.0
+
+[node name="Cronometro" parent="score" instance=ExtResource("9_gjx6a")]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 89.0
+offset_right = 216.0
+offset_bottom = 134.0
 
 [connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu_Inicio" to="." method="_on_menu_inicio_pressed"]

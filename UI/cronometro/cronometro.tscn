@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dds40qn7xc6d5" path="res://assets/icons/timer.png" id="1_3qpme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufoas"]
-bg_color = Color(0.351376, 0.688624, 0.385954, 1)
+bg_color = Color(0.32156864, 0.69411767, 0.40392157, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uwff1ssnabtx"]
+[gd_scene load_steps=12 format=3 uid="uid://uwff1ssnabtx"]
 
 [ext_resource type="Script" uid="uid://cvknx7swx61ss" path="res://scenes/game/main.gd" id="1_llaio"]
 [ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/tempo.tscn" id="2_yd8kv"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqpmftfk7u11" path="res://scenes/default/score.tscn" id="7_g38uy"]
 [ext_resource type="PackedScene" uid="uid://b353ituo5j5ix" path="res://UI/cronometro/cronometro.tscn" id="8_5v64u"]
 [ext_resource type="PackedScene" uid="uid://cyjibhpyvtwrc" path="res://elements/life/life.tscn" id="9_8aysu"]
+[ext_resource type="PackedScene" uid="uid://db1qe6smjmkgb" path="res://elements/button/btn-pause/btn-pause.tscn" id="10_mkoeh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v64u"]
 bg_color = Color(0.0751402, 0.212312, 0.0550049, 0.529412)
@@ -87,6 +88,12 @@ offset_bottom = 338.0
 
 [node name="snake" parent="." instance=ExtResource("7_5v64u")]
 position = Vector2(432, 180)
+
+[node name="pause" parent="." instance=ExtResource("10_mkoeh")]
+offset_left = 955.0
+offset_top = 37.0
+offset_right = 1015.0
+offset_bottom = 97.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="numero_clicado" from="Numeros" to="." method="_on_numeros_numero_clicado"]

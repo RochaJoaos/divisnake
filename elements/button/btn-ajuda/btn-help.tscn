@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4g3qxvoqt4im"]
+
+[ext_resource type="Script" uid="uid://b0g8giu01c3a1" path="res://elements/button/btn-config/btn-config.gd" id="1_m3kgh"]
+[ext_resource type="Texture2D" uid="uid://bf4tp6drqh4b1" path="res://assets/icons/help.png" id="2_s2ccs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6g0o"]
+bg_color = Color(0, 0.8, 0.380392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ps8cy"]
+bg_color = Color(0, 0.34902, 0.243137, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="config" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1092.0
+offset_bottom = -588.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6g0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ps8cy")
+script = ExtResource("1_m3kgh")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(30, 30)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_s2ccs")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
