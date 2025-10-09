@@ -1,4 +1,26 @@
-[gd_scene format=3 uid="uid://tqsno4fynim0"]
+[gd_scene load_steps=8 format=3 uid="uid://tqsno4fynim0"]
+
+[ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="1_e035m"]
+[ext_resource type="FontFile" uid="uid://drjgeh04gkqph" path="res://assets/fonts/outfit/Outfit-Medium.ttf" id="2_6b4p6"]
+[ext_resource type="Texture2D" uid="uid://bd1khnfd3kf3q" path="res://assets/sprites/catolicasc/csc.png" id="3_6b4p6"]
+[ext_resource type="Script" uid="uid://de63xoumjbfpt" path="res://scenes/menu/creditos/back-to-menu.gd" id="4_3ugdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onatq"]
+bg_color = Color(1, 0.98039216, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b4p6"]
+bg_color = Color(0.53027916, 0.10377941, 0.15684131, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ugdq"]
+bg_color = Color(0.77372396, 0.1289401, 0.22472754, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Creditos" type="Control"]
 layout_mode = 3
@@ -7,3 +29,104 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onatq")
+
+[node name="desenvolvido" type="Label" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 105.0
+offset_right = 848.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.46292686, 0.015224996, 0.1959247, 1)
+theme_override_fonts/font = ExtResource("1_e035m")
+theme_override_font_sizes/font_size = 26
+text = "Desenvolvedores:"
+
+[node name="dev" type="RichTextLabel" parent="desenvolvido"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 404.0
+offset_bottom = 286.0
+theme_override_colors/default_color = Color(0.4627451, 0.015686275, 0.19607843, 1)
+theme_override_fonts/normal_font = ExtResource("2_6b4p6")
+theme_override_font_sizes/normal_font_size = 24
+text = "Adrian Marcio Roth
+Daniela Luiza da Conceição
+Gustavo Franz
+João Henrique Souza Rocha
+Leonardo André Ferreira
+Marcelo Gustavo Eger 
+Willian Squena"
+
+[node name="orientador" type="Label" parent="."]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 378.0
+offset_right = 849.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.46292686, 0.015224996, 0.1959247, 1)
+theme_override_fonts/font = ExtResource("1_e035m")
+theme_override_font_sizes/font_size = 26
+text = "Orientador:"
+
+[node name="professor" type="RichTextLabel" parent="orientador"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 37.0
+offset_right = 406.0
+offset_bottom = 72.0
+theme_override_colors/default_color = Color(0.4627451, 0.015686275, 0.19607843, 1)
+theme_override_fonts/normal_font = ExtResource("2_6b4p6")
+theme_override_font_sizes/normal_font_size = 24
+text = " Diego Sauter Possamai"
+
+[node name="curso" type="Label" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 461.0
+offset_right = 848.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0.46292686, 0.015224996, 0.1959247, 1)
+theme_override_fonts/font = ExtResource("1_e035m")
+theme_override_font_sizes/font_size = 26
+text = "Curso:"
+
+[node name="eng_ software" type="RichTextLabel" parent="curso"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 37.0
+offset_right = 406.0
+offset_bottom = 72.0
+theme_override_colors/default_color = Color(0.4627451, 0.015686275, 0.19607843, 1)
+theme_override_fonts/normal_font = ExtResource("2_6b4p6")
+theme_override_font_sizes/normal_font_size = 24
+text = "Engenharia de Software"
+
+[node name="catolicasc" type="Sprite2D" parent="."]
+position = Vector2(340.00003, 295)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_6b4p6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 154.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("2_6b4p6")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6b4p6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ugdq")
+text = "Voltar"
+script = ExtResource("4_3ugdq")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

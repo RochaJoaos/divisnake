@@ -1,11 +1,13 @@
 extends Control
 
 @export var ponto_cada_acerto: int = 10
-@export var ponto_total: int = 20
+@export var ponto_total: int = 1000
 
 @onready var score_label: Label = $Label
+@onready var gameover := $"../.."
 
 var pontos: int = 0 : set = _set_pontos, get = _get_pontos
+
 
 signal score_aumenta(points: int)
 signal vitoria_score(points: int)
@@ -20,7 +22,6 @@ func reset() -> void:
 	emit_signal("score_aumenta", pontos)
 
 func resultado(acertou: bool) -> void:
-	print("hello world")
 	if acertou:
 		pontos += ponto_cada_acerto
 		_atualiza_label()

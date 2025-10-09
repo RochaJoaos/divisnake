@@ -21,7 +21,7 @@ func _process(delta):
 	get_input()
 	move_timer -= delta
 	if move_timer <= 0:
-		move_timer = 0.5
+		move_timer = 0.3
 		move_snake()
 
 func get_input():

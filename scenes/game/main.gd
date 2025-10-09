@@ -11,6 +11,7 @@ extends Node2D
 @onready var snake := $snake
 @onready var life := $life
 
+
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
 var jogo_iniciado := false   # pra saber se o jogo já começou
 
@@ -45,7 +46,7 @@ func on_numero_comido(valor:int) -> void:
 	#Checa se é correto ou errado e mostra no label
 	var acertou := _e_divisor(valor, pivo_atual)
 	if score_script:
-		score_script.resultado(acertou) 
+		score_script.resultado(acertou)
 	if is_instance_valid(resultado_label):
 		if acertou:
 			resultado_label.text = "Correto!"
