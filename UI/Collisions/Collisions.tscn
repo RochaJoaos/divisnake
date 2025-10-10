@@ -1,22 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://buducm0a32y71"]
+[gd_scene load_steps=4 format=3 uid="uid://buducm0a32y71"]
 
 [ext_resource type="Script" uid="uid://dnk6hy8f4podw" path="res://UI/Collisions/Collisions.gd" id="1_e4u2s"]
 [ext_resource type="Texture2D" uid="uid://sbs8ins0xeq2" path="res://assets/sprites/arena/1.jpg" id="2_sq6r2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fn46j"]
 texture = ExtResource("2_sq6r2")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yobu6"]
-size = Vector2(226, 664)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik0vk"]
-size = Vector2(226, 667)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgwq"]
-size = Vector2(1164.5, 45.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_px4wn"]
-size = Vector2(1173.5, 44.5)
 
 [node name="Collisions" type="StaticBody2D"]
 script = ExtResource("1_e4u2s")
@@ -25,32 +13,3 @@ script = ExtResource("1_e4u2s")
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_fn46j")
-
-[node name="CollisionL" type="Area2D" parent="."]
-
-[node name="CollisionLeft" type="CollisionShape2D" parent="CollisionL"]
-position = Vector2(102, 328)
-shape = SubResource("RectangleShape2D_yobu6")
-
-[node name="CollisionR" type="Area2D" parent="."]
-
-[node name="CollisionRight" type="CollisionShape2D" parent="CollisionR"]
-position = Vector2(1049, 323.5)
-shape = SubResource("RectangleShape2D_ik0vk")
-
-[node name="CollisionB" type="Area2D" parent="."]
-
-[node name="CollisionBelow" type="CollisionShape2D" parent="CollisionB"]
-position = Vector2(577, 636.75)
-shape = SubResource("RectangleShape2D_xbgwq")
-
-[node name="CollisonT" type="Area2D" parent="."]
-
-[node name="CollisionTop" type="CollisionShape2D" parent="CollisonT"]
-position = Vector2(575.25, 12.75)
-shape = SubResource("RectangleShape2D_px4wn")
-
-[connection signal="body_entered" from="CollisionL" to="." method="_on_collision_l_body_entered"]
-[connection signal="body_entered" from="CollisionR" to="." method="_on_collision_r_body_entered"]
-[connection signal="body_entered" from="CollisionB" to="." method="_on_collision_b_body_entered"]
-[connection signal="body_entered" from="CollisonT" to="." method="_on_collison_t_body_entered"]

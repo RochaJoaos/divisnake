@@ -7,6 +7,10 @@ var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @onready var head : Sprite2D = $Sprite2D
 @onready var Pause: Control = $"../UI_Pause/Pause"
 @export var localsnake := Vector2(2, 4)
+var min_screen_x : int = 216
+var min_screen_y : int = 36
+var max_screen_x : int = 900
+var max_screen_y : int = 576
 
 # --- corpo da cobra ---
 var segment_scene = preload("res://scenes/game/snake/body-snake.tscn")
@@ -45,6 +49,8 @@ func move_snake():
 	# salva a posição atual da cabeça
 	var last_position = position
 	position += direction * cell_size
+	if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
+		get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
 
 	# movimenta cada parte do corpo
 	for i in range(body_parts.size()):

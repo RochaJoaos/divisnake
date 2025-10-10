@@ -87,7 +87,7 @@ offset_right = 48.0
 offset_bottom = 338.0
 
 [node name="snake" parent="." instance=ExtResource("7_5v64u")]
-position = Vector2(432, 180)
+position = Vector2(612, 252)
 
 [node name="pause" parent="." instance=ExtResource("10_mkoeh")]
 offset_left = 955.0

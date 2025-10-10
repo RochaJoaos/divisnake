@@ -38,7 +38,7 @@ func Botao_sair_press() -> void:
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf3a5"]
 texture = ExtResource("1_5fx2x")
-modulate_color = Color(0.29, 0.29, 0.29, 1)
+modulate_color = Color(1, 0.958, 0.72, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cknpx"]
 bg_color = Color(1, 1, 1, 1)
@@ -97,62 +97,62 @@ grow_vertical = 2
 [node name="Jogar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Jogar
 "
 
 [node name="Opções" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Opções"
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Creditos"
 
 [node name="Sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Sair"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -175,64 +175,64 @@ modulate = Color(1, 0.883333, 0, 1)
 light_mask = 0
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m5qsp")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "JOGAR"
 
 [node name="Opções" type="Button" parent="VBoxContainer2"]
 modulate = Color(1, 0.882353, 0, 1)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m5qsp")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "OPÇÕES"
 
 [node name="Creditos" type="Button" parent="VBoxContainer2"]
 modulate = Color(1, 0.882353, 0, 1)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m5qsp")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "CREDITOS"
 
 [node name="Sair" type="Button" parent="VBoxContainer2"]
 modulate = Color(1, 0.882353, 0, 1)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m5qsp")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "SAIR"
 
 [node name="Titulo" type="Label" parent="."]
