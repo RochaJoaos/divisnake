@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://brsqps5rmp6tt"]
+[gd_scene load_steps=8 format=3 uid="uid://brsqps5rmp6tt"]
 
 [ext_resource type="Texture2D" uid="uid://dvw5aud3g8top" path="res://assets/sprites/background/cinza-escuro.png" id="1_byju4"]
 [ext_resource type="PackedScene" uid="uid://dytnsvivcwkmj" path="res://elements/button/btn-config/btn-config.tscn" id="2_p10t2"]
-[ext_resource type="PackedScene" path="res://elements/button/btn-ajuda/ajuda.tscn" id="3_jai32"]
 [ext_resource type="PackedScene" uid="uid://cwapk460lwwh6" path="res://elements/cards/multiplayer-card/multiplayer.tscn" id="3_ulgee"]
 [ext_resource type="PackedScene" uid="uid://i1xuvvnj5qrj" path="res://elements/cards/singleplayer-card/singlepayer.tscn" id="4_byju4"]
 [ext_resource type="PackedScene" uid="uid://d1krvh5kvdjnt" path="res://elements/button/btn-home/btn-home.tscn" id="6_byju4"]
@@ -36,13 +35,6 @@ layout_mode = 1
 offset_left = 1076.0
 offset_top = 571.0
 offset_right = -16.0
-offset_bottom = -17.0
-
-[node name="ajuda" parent="." instance=ExtResource("3_jai32")]
-layout_mode = 1
-offset_left = 1010.0
-offset_top = 571.0
-offset_right = -82.0
 offset_bottom = -17.0
 
 [node name="multi" parent="." instance=ExtResource("3_ulgee")]

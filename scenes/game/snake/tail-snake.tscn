@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw52mughpj7cc"]
+
+[ext_resource type="Texture2D" uid="uid://ba78h6n8efrev" path="res://assets/sprites/snake/tail/yellow_tail_right.png" id="1_abmc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6cw7"]
+size = Vector2(36, 36)
+
+[node name="tail" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, 18)
+scale = Vector2(0.036, 0.036)
+texture = ExtResource("1_abmc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 18)
+shape = SubResource("RectangleShape2D_t6cw7")

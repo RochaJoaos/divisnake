@@ -4,7 +4,9 @@ extends CharacterBody2D
 var cell_size: int = 36
 var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @export var start : bool = false
-@onready var head : Sprite2D = $Sprite2D
+@onready var head : Sprite2D = $head
+@onready var body := $body
+@onready var tail := $tail
 @onready var Pause: Control = $"../UI_Pause/Pause"
 @export var localsnake := Vector2(2, 4)
 var min_screen_x : int = 216
@@ -13,13 +15,11 @@ var max_screen_x : int = 900
 var max_screen_y : int = 576
 
 # --- corpo da cobra ---
-var segment_scene = preload("res://scenes/game/snake/body-snake.tscn")
 var body_parts: Array = []  # lista com os pedaços da cobra
 var pending_growth: int = 0 # quantos segmentos devem ser adicionados
 
 func _ready():
 	position = position.snapped(Vector2(cell_size, cell_size))
-	preload("res://scenes/game/snake/body-snake.tscn")
 
 func _process(delta):
 	get_input()
@@ -45,26 +45,48 @@ func get_input():
 func move_snake():
 	if not start:
 		return
-
 	# salva a posição atual da cabeça
+	
+	
 	var last_position = position
+	
+	body_parts.insert(0, body.position)
 	position += direction * cell_size
+	
+
+	# movimento da corpo quando se move para esquerda
+	if last_position.x > position.x && last_position.y == position.y :
+		body.position = Vector2(36, 0)
+		tail.position.x = body_parts[0].x * 2
+		tail.position.y = body_parts[0].y * 2
+		
+	# movimento da corpo quando se move para direita
+	if last_position.x < position.x && last_position.y == position.y :
+		body.position = Vector2(-36, 0)
+		tail.position.x = body_parts[0].x * 2
+		tail.position.y = body_parts[0].y * 2
+		
+	# movimento da corpo quando se move para cima
+	if last_position.x == position.x && last_position.y < position.y :
+		body.position = Vector2(0, -36)
+		tail.position.x = body_parts[0].x * 2
+		tail.position.y = body_parts[0].y * 2
+		
+	# movimento da corpo quando se move para direita
+	if last_position.x == position.x && last_position.y > position.y :
+		body.position = Vector2(0, 36)
+		tail.position.x = body_parts[0].x * 2
+		tail.position.y = body_parts[0].y * 2
+
+	
+	#delimita a parede da arena, se ela enconstar perde
 	if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
 		get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
 
-	# movimenta cada parte do corpo
-	for i in range(body_parts.size()):
-		var temp = body_parts[i].position
-		body_parts[i].position = last_position
-		last_position = temp
+	print("### POSICAO: ", position)
+	print("### OlD    : ", last_position)
+	print("### Body   : ", body.position)
 
-	# adiciona novos segmentos se tiver pendente
-	if pending_growth > 0:
-		var new_segment = segment_scene.instantiate()
-		new_segment.position = last_position
-		get_parent().add_child(new_segment)
-		body_parts.append(new_segment)
-		pending_growth -= 1
 
 func grow(amount: int = 1) -> void:
 	# chama essa função quando comer uma maçã, por exemplo
