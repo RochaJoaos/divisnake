@@ -6,11 +6,13 @@
 size = Vector2(36, 36)
 
 [node name="body" type="CharacterBody2D"]
+position = Vector2(576, 252)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-37.00002, -14.999993)
 scale = Vector2(0.036, 0.036)
 texture = ExtResource("1_2fmr8")
-offset = Vector2(500, 500)
+offset = Vector2(1527.7783, 916.6665)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18, 18)

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d0apcjcvedhcp" path="res://scenes/game/snake/move_snake.gd" id="1_ps8rd"]
 [ext_resource type="Texture2D" uid="uid://dg3rux0rrgdmv" path="res://assets/sprites/snake/head/yellow_head_right.png" id="2_ps8rd"]
-[ext_resource type="PackedScene" uid="uid://ccxfc4p2vvpdm" path="res://scenes/game/snake/body-snake.tscn" id="4_q2w6h"]
-[ext_resource type="PackedScene" uid="uid://cw52mughpj7cc" path="res://scenes/game/snake/tail-snake.tscn" id="4_tniej"]
+[ext_resource type="Texture2D" uid="uid://bdhhlq7a4bsc" path="res://assets/sprites/snake/body/body_horizontal.png" id="3_q2w6h"]
+[ext_resource type="Texture2D" uid="uid://ba78h6n8efrev" path="res://assets/sprites/snake/tail/yellow_tail_right.png" id="4_tniej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps8rd"]
 size = Vector2(36, 36)
@@ -12,17 +12,21 @@ size = Vector2(36, 36)
 script = ExtResource("1_ps8rd")
 
 [node name="head" type="Sprite2D" parent="." groups=["snake"]]
-position = Vector2(0, 2.38419e-07)
+position = Vector2(612, 252)
 scale = Vector2(0.036, 0.036)
 texture = ExtResource("2_ps8rd")
 offset = Vector2(500, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["snake"]]
-position = Vector2(18, 18)
+position = Vector2(630, 270)
 shape = SubResource("RectangleShape2D_ps8rd")
 
-[node name="body" parent="." groups=["snake"] instance=ExtResource("4_q2w6h")]
-position = Vector2(-36, 0)
+[node name="body" type="Sprite2D" parent="."]
+scale = Vector2(0.036, 0.036)
+texture = ExtResource("3_q2w6h")
+offset = Vector2(16500.004, 7500.001)
 
-[node name="tail" parent="." instance=ExtResource("4_tniej")]
-position = Vector2(-72, 0)
+[node name="tail" type="Sprite2D" parent="."]
+scale = Vector2(0.036, 0.036)
+texture = ExtResource("4_tniej")
+offset = Vector2(15500.003, 7500.0015)

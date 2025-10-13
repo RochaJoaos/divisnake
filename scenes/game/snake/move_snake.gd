@@ -52,36 +52,12 @@ func move_snake():
 	
 	body_parts.insert(0, body.position)
 	position += direction * cell_size
-	
-
-	# movimento da corpo quando se move para esquerda
-	if last_position.x > position.x && last_position.y == position.y :
-		body.position = Vector2(36, 0)
-		tail.position.x = body_parts[0].x * 2
-		tail.position.y = body_parts[0].y * 2
-		
-	# movimento da corpo quando se move para direita
-	if last_position.x < position.x && last_position.y == position.y :
-		body.position = Vector2(-36, 0)
-		tail.position.x = body_parts[0].x * 2
-		tail.position.y = body_parts[0].y * 2
-		
-	# movimento da corpo quando se move para cima
-	if last_position.x == position.x && last_position.y < position.y :
-		body.position = Vector2(0, -36)
-		tail.position.x = body_parts[0].x * 2
-		tail.position.y = body_parts[0].y * 2
-		
-	# movimento da corpo quando se move para direita
-	if last_position.x == position.x && last_position.y > position.y :
-		body.position = Vector2(0, 36)
-		tail.position.x = body_parts[0].x * 2
-		tail.position.y = body_parts[0].y * 2
-
+	body.position = last_position
 	
 	#delimita a parede da arena, se ela enconstar perde
 	if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
 		get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
+		print("Tela")
 
 	print("### POSICAO: ", position)
 	print("### OlD    : ", last_position)
