@@ -11,6 +11,8 @@ extends Node2D
 @onready var snake := $snake
 @onready var life := $life
 
+const LIMITE_HISTORICO := 10   
+var historico_pivos: Array[int] = []
 var nivel_dificuldade := 1
 var acertos := 0
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
@@ -63,16 +65,23 @@ func on_numero_comido(valor:int) -> void:
 
 
 func _sortear_pivo() -> void:
-	var tentativas := 0 # um contador de tentativas
-	while true: # enquanto for verdadeiro:
-		var n := randi_range(pivo_min, pivo_max) #sorteia um numero entre o intervalo definido no topo
-		if n > 3 and not _num_primo(n):   # garante maior ou igual a 4 e que nao seja primo
-			pivo_atual = n # se entrar entao é valido, e entao o pivo é guardado e sai do while.
-			break 
-		tentativas += 1 # contando as tentativas sse nao passou do if acima
-		if tentativas > 100:    # se por acaso passar de 100 tentativas :
-			pivo_atual = 4      # o pivo entao vira 4 como plano b
-			break
+	# garante que o range é válido
+	if pivo_max <= pivo_min:
+		pivo_max = pivo_min + 5
+
+	for i in range(200):  # tenta achar um número válido até 200 vezes
+		var n := randi_range(pivo_min, pivo_max)
+		# precisa ser composto (não primo) e não estar nos últimos pivôs
+		if n > 3 and not _num_primo(n) and n not in historico_pivos:
+			pivo_atual = n
+			# adiciona ao histórico e corta se passar do limite
+			historico_pivos.append(n)
+			if historico_pivos.size() > LIMITE_HISTORICO:
+				historico_pivos.pop_front()
+			return
+
+	# fallback se não achar nada diferente
+	pivo_atual = 10
 
 func _num_primo(n:int) -> bool: # funcao q retorna true se o 'n' for primo
 	if n <= 1: return false # 0 e 1 nao sao primos 
