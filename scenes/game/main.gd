@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var pivo_min:int = 10 # valor mínimo do pivô
-@export var pivo_max:int = 99 # valor máximo do pivô
+@export var pivo_max:int = 20 # valor máximo do pivô a princípio
 
 @onready var numeros :=  $Numeros         # referência para o node "numbers" (script dos números em tela)
 @onready var cronometro := $Cronometro # referência para o cronômetro
@@ -11,7 +11,8 @@ extends Node2D
 @onready var snake := $snake
 @onready var life := $life
 
-
+var nivel_dificuldade := 1
+var acertos := 0
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
 var jogo_iniciado := false   # pra saber se o jogo já começou
 
@@ -49,8 +50,9 @@ func on_numero_comido(valor:int) -> void:
 		score_script.resultado(acertou)
 	if is_instance_valid(resultado_label):
 		if acertou:
-			resultado_label.text = "Correto!"
-			resultado_label.modulate = Color(0, 1, 0)   # muda a cor pra verde
+			acertos += 1
+			if acertos % 5 == 0:
+				_aumentar_dificuldade()
 		else:
 			life.your_life -= 1
 
@@ -90,3 +92,11 @@ func _atualizar_pivo_ui() -> void: # atualiza o label do pivo com o numero novo
 
 func _e_divisor(valor:int, pivo:int) -> bool: #retorna true se o valor é divisor do pivo
 	return valor != 0 and pivo % valor == 0  #garante que nao seja zero e ve se é divisor
+	
+func _aumentar_dificuldade() -> void:
+	nivel_dificuldade += 1
+	# empurra o teto pra cima (sem mexer no mínimo)
+	pivo_min = min(pivo_min + 5, 80) # nunca passa de 80
+	pivo_max = min(pivo_max + 5, 99)
+	
+	print("⚙️ nível:", nivel_dificuldade, " | pivô entre", pivo_min, "-", pivo_max)

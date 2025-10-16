@@ -55,9 +55,9 @@ func move_snake():
 	body.position = last_position
 	
 	#delimita a parede da arena, se ela enconstar perde
-	if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
-		get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
-		print("Tela")
+	#if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
+	#	get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
+	#	print("Tela")
 
 	print("### POSICAO: ", position)
 	print("### OlD    : ", last_position)
