@@ -117,14 +117,14 @@ func _aumentar_dificuldade() -> void:
 ##--------------- ÁREA DE TESTE -----------------------
 
 func _gerar_numeros_simulados(pivo: int, total: int = 5) -> Array[int]:
-	var nums: Array[int] = [pivo] # garante que o pivô está entre os números
+	# Simula os números que aparecem na tela sem forçar incluir o pivô
+	var nums: Array[int] = []
 	while nums.size() < total:
-		var n: int = randi_range(pivo_min, pivo_max)
+		var n: int = randi_range(1, 99) # range amplo, como no jogo real
 		if n not in nums:
 			nums.append(n)
 	nums.shuffle()
 	return nums
-
 
 func _salvar_csv(dados: Array) -> void:
 	var file := FileAccess.open("res://logs/resultado.csv", FileAccess.WRITE)
@@ -151,7 +151,6 @@ func _salvar_csv(dados: Array) -> void:
 	file.close()
 	print("Arquivo CSV gerado: res://logs/resultado.csv")
 
-
 func _testar_numeros_progressao() -> void:
 	randomize()
 	
@@ -167,13 +166,14 @@ func _testar_numeros_progressao() -> void:
 	for i in range(total_acertos):
 		acertos += 1
 
+		# Aumenta dificuldade a cada 5 acertos
 		if acertos % acertos_por_nivel == 0:
 			_aumentar_dificuldade()
 
 		# Sorteia pivô
 		_sortear_pivo()
 
-		# Gera 5 números da rodada
+		# Gera 5 números simulando os que aparecem na tela
 		var numeros_da_rodada: Array[int] = _gerar_numeros_simulados(pivo_atual)
 
 		# Salva dados da rodada
