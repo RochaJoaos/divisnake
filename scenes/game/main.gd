@@ -24,6 +24,9 @@ func _ready() -> void:
 	if is_instance_valid(pivo): # se o label do pivô existe
 		pivo.text = "00" 
 	print(snake.position)
+	
+	#TESTE: DESCOMENTE PRA RODAR O LOG DE PROGRESSÃO
+	_testar_numeros_progressao()
 
 func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	if jogo_iniciado: return # se ja começou sai
@@ -33,7 +36,7 @@ func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	cronometro.start() # start é a função no script do cronometro que diz pra começar o cronometro
 	_sortear_pivo() # chama a função para sortear o pivo
 	numeros.call_deferred("gerar", pivo_atual) # chama o gerar do numeros com o pivo q foi sorteado antes
-	_atualizar_pivo_ui() # chama a função pra atualizar o texto e label do pivo.
+	_atualizar_pivo_ui() # chama a fsimunção pra atualizar o texto e label do pivo.
 
 	$Button.disabled = true # desabilita o botao de começar pra nn poder mais clicar
 	$Button.visible  = false # deixa invisivel 
@@ -109,3 +112,86 @@ func _aumentar_dificuldade() -> void:
 	pivo_max = min(pivo_max + 5, 99)
 	
 	print("⚙️ nível:", nivel_dificuldade, " | pivô entre", pivo_min, "-", pivo_max)
+
+
+##--------------- ÁREA DE TESTE -----------------------
+
+func _gerar_numeros_simulados(pivo: int, total: int = 5) -> Array[int]:
+	var nums: Array[int] = [pivo] # garante que o pivô está entre os números
+	while nums.size() < total:
+		var n: int = randi_range(pivo_min, pivo_max)
+		if n not in nums:
+			nums.append(n)
+	nums.shuffle()
+	return nums
+
+
+func _salvar_csv(dados: Array) -> void:
+	var file := FileAccess.open("res://logs/resultado.csv", FileAccess.WRITE)
+	
+	# Cabeçalho: Rodada,Pivo,Min,Max,Num1-5
+	var cabecalho := ["Rodada","Pivo","Min","Max"]
+	for i in range(5):
+		cabecalho.append("Num%d" % (i+1))
+	file.store_line(";".join(cabecalho))
+	
+	# escreve cada linha
+	for linha in dados:
+		var line := [str(linha["rodada"]), str(linha["pivo"]), str(linha["min"]), str(linha["max"])]
+		
+		# números da rodada
+		for i in range(5):
+			if i < linha["numeros"].size():
+				line.append(str(linha["numeros"][i]))
+			else:
+				line.append("")
+		
+		file.store_line(";".join(line))
+	
+	file.close()
+	print("Arquivo CSV gerado: res://logs/resultado.csv")
+
+
+func _testar_numeros_progressao() -> void:
+	randomize()
+	
+	var dados_rodadas := []
+	acertos = 0
+	historico_pivos.clear()
+	pivo_min = 10
+	pivo_max = 20
+	nivel_dificuldade = 1
+	var total_acertos = 70
+	var acertos_por_nivel = 5
+
+	for i in range(total_acertos):
+		acertos += 1
+
+		if acertos % acertos_por_nivel == 0:
+			_aumentar_dificuldade()
+
+		# Sorteia pivô
+		_sortear_pivo()
+
+		# Gera 5 números da rodada
+		var numeros_da_rodada: Array[int] = _gerar_numeros_simulados(pivo_atual)
+
+		# Salva dados da rodada
+		dados_rodadas.append({
+			"rodada": acertos,
+			"pivo": pivo_atual,
+			"min": pivo_min,
+			"max": pivo_max,
+			"numeros": numeros_da_rodada,
+			"historico": historico_pivos.duplicate()
+		})
+
+		# Log no console
+		print("⚡ Rodada", acertos,
+			  "| Pivô:", pivo_atual,
+			  "| Intervalo:", pivo_min, "-", pivo_max,
+			  "| Números:", numeros_da_rodada,
+			  "| Histórico:", historico_pivos)
+	
+	# Salva CSV
+	_salvar_csv(dados_rodadas)

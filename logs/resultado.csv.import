@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d2kb4341tg0kq"
+valid=false
+
+[deps]
+
+source_file="res://logs/resultado.csv"
+
+[params]
+
+compress=true
+delimiter=0
