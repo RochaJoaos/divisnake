@@ -1,9 +1,182 @@
-[gd_scene format=3 uid="uid://c0ccfk6tsvi0k"]
+[gd_scene load_steps=12 format=3 uid="uid://c0ccfk6tsvi0k"]
 
-[node name="Opções" type="Control"]
+[ext_resource type="Texture2D" uid="uid://cgn826nxrd5yo" path="res://assets/icons/config.png" id="1_3puiw"]
+[ext_resource type="FontFile" uid="uid://drjgeh04gkqph" path="res://assets/fonts/outfit/Outfit-Medium.ttf" id="2_gxlvj"]
+[ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="2_sdx4i"]
+[ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="4_8ix2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok7gl"]
+bg_color = Color(0.75620705, 0.8506858, 0.9335078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3puiw"]
+bg_color = Color(0.3254902, 0.6039216, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxlvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ix2f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bldgd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3geo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hv0yn"]
+
+[node name="opcoes" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ok7gl")
+
+[node name="titulo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 406.0
+offset_top = 143.0
+offset_right = 594.0
+offset_bottom = 183.0
+
+[node name="img-opcoes" type="Sprite2D" parent="titulo"]
+modulate = Color(0.3254902, 0.6039216, 1, 1)
+position = Vector2(20.00003, 20.000008)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_3puiw")
+
+[node name="txt-opcoes" type="Label" parent="titulo"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = -7.0
+offset_right = 188.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.3254902, 0.6039216, 1, 1)
+theme_override_fonts/font = ExtResource("4_8ix2f")
+theme_override_font_sizes/font_size = 40
+text = "Opções"
+
+[node name="menu" type="MenuBar" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 198.0
+offset_right = 777.0
+offset_bottom = 458.0
+
+[node name="p-som" type="Panel" parent="menu"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 377.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3puiw")
+
+[node name="txt-som" type="Label" parent="menu/p-som"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 193.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("2_sdx4i")
+theme_override_font_sizes/font_size = 32
+text = "Som: "
+
+[node name="btn-som" type="Button" parent="menu/p-som"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 15.0
+offset_right = 357.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.64705884, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_gxlvj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gxlvj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ix2f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bldgd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
+text = "ligado"
+alignment = 2
+
+[node name="p-velocidade" type="Panel" parent="menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 89.0
+offset_right = 376.0
+offset_bottom = 169.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3puiw")
+
+[node name="txt-velocidade" type="Label" parent="menu/p-velocidade"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 195.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("2_sdx4i")
+theme_override_font_sizes/font_size = 32
+text = "Velocidade: "
+
+[node name="btn-velocidade" type="Button" parent="menu/p-velocidade"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 16.0
+offset_right = 357.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.64705884, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_gxlvj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gxlvj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ix2f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bldgd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
+text = "normal"
+alignment = 2
+
+[node name="p-idioma" type="Panel" parent="menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 180.0
+offset_right = 376.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3puiw")
+
+[node name="txt-idioma" type="Label" parent="menu/p-idioma"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 195.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("2_sdx4i")
+theme_override_font_sizes/font_size = 32
+text = "Idioma:"
+
+[node name="btn-idioma" type="Button" parent="menu/p-idioma"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 16.0
+offset_right = 357.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.64705884, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_gxlvj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gxlvj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ix2f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bldgd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
+text = "português"
+alignment = 2
