@@ -5,8 +5,6 @@ var cell_size: int = 36
 var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @export var start : bool = false
 @onready var head : Sprite2D = $head
-@onready var body := $body
-@onready var tail := $tail
 @onready var Pause: Control = $"../UI_Pause/Pause"
 @export var localsnake := Vector2(2, 4)
 var min_screen_x : int = 216
@@ -47,12 +45,8 @@ func move_snake():
 		return
 	# salva a posição atual da cabeça
 	
-	
-	var last_position = position
-	
-	body_parts.insert(0, body.position)
+
 	position += direction * cell_size
-	body.position = last_position
 	
 	#delimita a parede da arena, se ela enconstar perde
 	#if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
@@ -60,8 +54,6 @@ func move_snake():
 	#	print("Tela")
 
 	print("### POSICAO: ", position)
-	print("### OlD    : ", last_position)
-	print("### Body   : ", body.position)
 
 
 func grow(amount: int = 1) -> void:

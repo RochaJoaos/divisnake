@@ -160,4 +160,6 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_mrfuy")
 
 [connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Regras" to="." method="_on_regras_pressed"]
+[connection signal="pressed" from="VBoxContainer/Configuração" to="." method="_on_configuração_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu_inicial" to="." method="_on_menu_inicial_pressed"]
