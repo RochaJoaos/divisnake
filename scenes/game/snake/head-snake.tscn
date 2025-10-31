@@ -11,8 +11,8 @@ size = Vector2(36, 36)
 script = ExtResource("1_ps8rd")
 
 [node name="head" type="Sprite2D" parent="." groups=["snake"]]
-position = Vector2(1384.0001, 472.00003)
-scale = Vector2(0.036, 0.036)
+position = Vector2(1801.9999, 623)
+scale = Vector2(0.04699996, 0.04800003)
 texture = ExtResource("2_ps8rd")
 offset = Vector2(-37944.45, -12611.112)
 

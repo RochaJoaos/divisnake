@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccxfc4p2vvpdm"]
 
-[ext_resource type="Texture2D" uid="uid://bdhhlq7a4bsc" path="res://assets/sprites/snake/body/body_horizontal.png" id="1_2fmr8"]
+[ext_resource type="Texture2D" uid="uid://bunpy7y8sfxgr" path="res://assets/sprites/snake/body/body_full.png" id="1_2fmr8"]
 
 [node name="body" type="Node2D"]
 light_mask = 512
