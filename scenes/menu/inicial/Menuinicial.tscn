@@ -87,10 +87,10 @@ anchor_left = 0.455
 anchor_top = 0.5
 anchor_right = 0.455
 anchor_bottom = 0.5
-offset_left = -66.26257
-offset_top = -40.715027
-offset_right = 216.73743
-offset_bottom = 143.28497
+offset_left = -68.26257
+offset_top = -26.715027
+offset_right = 214.73743
+offset_bottom = 157.28497
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -178,12 +178,12 @@ theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
 [node name="Logo-1" type="Sprite2D" parent="."]
-position = Vector2(571.8975, 160.285)
+position = Vector2(571.8975, 152.28502)
 scale = Vector2(0.545, 0.545)
 texture = ExtResource("4_m13hv")
 
 [node name="avaliar" parent="." instance=ExtResource("6_5fx2x")]
-position = Vector2(514, 574)
+position = Vector2(512, 570)
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
 [connection signal="pressed" from="VBoxContainer/Opções" to="." method="Botao_opcoes_press"]

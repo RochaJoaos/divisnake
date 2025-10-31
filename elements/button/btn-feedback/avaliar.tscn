@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uoiadfk2cwg1" path="res://elements/button/btn-feedback/avaliar.gd" id="1_7cxbu"]
 [ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="1_w3uax"]
-[ext_resource type="Texture2D" uid="uid://dlk10eqnad16h" path="res://assets/icons/estrela.png" id="2_7cxbu"]
+[ext_resource type="Texture2D" uid="uid://dlk10eqnad16h" path="res://assets/icons/star.png" id="2_7cxbu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h7k3"]
 bg_color = Color(0.9242281, 0, 0.32242113, 1)
