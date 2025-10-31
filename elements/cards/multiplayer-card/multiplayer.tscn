@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwapk460lwwh6"]
 
 [ext_resource type="Script" uid="uid://b2uy8208wm06r" path="res://elements/cards/multiplayer-card/multiplayer-card.gd" id="1_30j2t"]
-[ext_resource type="Texture2D" uid="uid://bwyyap42fllqg" path="res://assets/sprites/cards/multipalyer.png" id="2_lo3gs"]
+[ext_resource type="Texture2D" uid="uid://bre0ocwa1xwxy" path="res://assets/sprites/cards/indisponivel.png" id="2_30j2t"]
 
 [node name="card" type="TextureButton"]
 offset_right = 240.0
@@ -10,7 +10,7 @@ script = ExtResource("1_30j2t")
 
 [node name="Multipalyer" type="Sprite2D" parent="."]
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_lo3gs")
+texture = ExtResource("2_30j2t")
 offset = Vector2(1000, 1330)
 
 [connection signal="pressed" from="." to="." method="multi_on_pressed"]
