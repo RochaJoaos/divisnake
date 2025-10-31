@@ -68,7 +68,7 @@ offset_bottom = 142.75
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Continuar" type="Button" parent="VBoxContainer"]
+[node name="Reiniciar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -81,7 +81,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0rrxd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fgnpx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8sb4v")
 theme_override_styles/focus = SubResource("StyleBoxFlat_0rrxd")
-text = "Continuar
+text = "Reiniciar
 "
 
 [node name="Regras" type="Button" parent="VBoxContainer"]
@@ -160,7 +160,7 @@ position = Vector2(695, 179)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_mrfuy")
 
-[connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Regras" to="." method="_on_regras_pressed"]
 [connection signal="pressed" from="VBoxContainer/Configuração" to="." method="_on_configuração_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu_inicial" to="." method="_on_menu_inicial_pressed"]
