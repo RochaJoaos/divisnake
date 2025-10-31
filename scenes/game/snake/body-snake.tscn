@@ -6,6 +6,8 @@
 size = Vector2(36, 36)
 
 [node name="body" type="CharacterBody2D"]
+light_mask = 512
+visibility_layer = 512
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-37.00002, -14.999993)

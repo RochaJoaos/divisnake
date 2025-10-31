@@ -18,12 +18,21 @@ var acertos := 0
 var pivo_atual: int = 0      # guarda o valor do pivô sorteado atualmente
 var jogo_iniciado := false   # pra saber se o jogo já começou
 
+@onready var body_scene = preload("res://scenes/game/snake/body-snake.tscn")
+var height : int = 1
+var body_parts: Array = []
+
+
 func _ready() -> void:
+	snake.connect("moved", Callable(self, "_on_snake_moved"))
 	randomize() # embaralha o gerador de números aleatórios pra evitar repetições 
 	numeros.limpar() # limpa qualquer número que esteja na tela (pegando a função do scrript do numeros)
 	if is_instance_valid(pivo): # se o label do pivô existe
 		pivo.text = "00" 
 	print(snake.position)
+	
+#func _process(delta) -> void:
+	
 
 func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	if jogo_iniciado: return # se ja começou sai
@@ -34,9 +43,10 @@ func _on_button_pressed() -> void: # quando o botao de começar é clicado
 	_sortear_pivo() # chama a função para sortear o pivo
 	numeros.call_deferred("gerar", pivo_atual) # chama o gerar do numeros com o pivo q foi sorteado antes
 	_atualizar_pivo_ui() # chama a função pra atualizar o texto e label do pivo.
-
 	$Button.disabled = true # desabilita o botao de começar pra nn poder mais clicar
 	$Button.visible  = false # deixa invisivel 
+		
+	
 
 #sinal do numbers, sempre quando clicado ele chama 'on_numero_comido(valor)'
 func _on_numeros_numero_clicado(valor: int) -> void: 
@@ -53,6 +63,10 @@ func on_numero_comido(valor:int) -> void:
 	if is_instance_valid(resultado_label):
 		if acertou:
 			acertos += 1
+			height += acertos
+			spawn_body()
+			print("ARRAY: ", body_parts.size())
+			print("comi:", height)
 			if acertos % 5 == 0:
 				_aumentar_dificuldade()
 		else:
@@ -109,3 +123,23 @@ func _aumentar_dificuldade() -> void:
 	pivo_max = min(pivo_max + 5, 99)
 	
 	print("⚙️ nível:", nivel_dificuldade, " | pivô entre", pivo_min, "-", pivo_max)
+	
+
+
+func _on_snake_moved(old_pos: Vector2, new_pos: Vector2) -> void:
+	var last_pos = old_pos
+
+	for corpo in body_parts:
+		var temp = corpo.position
+		corpo.position = last_pos
+		last_pos = temp
+
+func spawn_body():
+	var body = body_scene.instantiate()
+	add_child(body)
+	body_parts.append(body)
+	
+
+	
+
+	

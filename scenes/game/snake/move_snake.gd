@@ -15,6 +15,8 @@ var max_screen_y : int = 576
 # --- corpo da cobra ---
 var body_parts: Array = []  # lista com os pedaços da cobra
 var pending_growth: int = 0 # quantos segmentos devem ser adicionados
+signal moved(old_pos: Vector2, new_pos: Vector2)
+
 
 func _ready():
 	position = position.snapped(Vector2(cell_size, cell_size))
@@ -44,16 +46,12 @@ func move_snake():
 	if not start:
 		return
 	# salva a posição atual da cabeça
-	
-
-	position += direction * cell_size
-	
+	moved_snake()
 	#delimita a parede da arena, se ela enconstar perde
-	#if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
-	#	get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
+	if position.x > max_screen_x || position.x < min_screen_x || position.y > max_screen_y || position.y < min_screen_y:
+		Die()
 	#	print("Tela")
 
-	print("### POSICAO: ", position)
 
 
 func grow(amount: int = 1) -> void:
@@ -65,3 +63,12 @@ func Die():
 
 func pause():
 	Pause.visible = true
+	
+func moved_snake():
+	if not start:
+		return
+	
+	var old_pos = position
+	position += direction * cell_size
+	
+	emit_signal("moved", old_pos, position)
