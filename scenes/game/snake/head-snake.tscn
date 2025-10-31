@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqyivelr1p5yg"]
+[gd_scene load_steps=5 format=3 uid="uid://dqyivelr1p5yg"]
 
 [ext_resource type="Script" uid="uid://d0apcjcvedhcp" path="res://scenes/game/snake/move_snake.gd" id="1_ps8rd"]
 [ext_resource type="Texture2D" uid="uid://dg3rux0rrgdmv" path="res://assets/sprites/snake/head/yellow_head_right.png" id="2_ps8rd"]
+[ext_resource type="PackedScene" uid="uid://c0ccfk6tsvi0k" path="res://scenes/menu/opcoes/Opções.tscn" id="3_4nqom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps8rd"]
 size = Vector2(36, 36)
@@ -18,3 +19,6 @@ offset = Vector2(-37944.45, -12611.112)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["snake"]]
 position = Vector2(18, 18)
 shape = SubResource("RectangleShape2D_ps8rd")
+
+[node name="opcoes" parent="." instance=ExtResource("3_4nqom")]
+visible = false

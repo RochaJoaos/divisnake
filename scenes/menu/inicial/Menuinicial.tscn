@@ -86,10 +86,10 @@ anchor_left = 0.455
 anchor_top = 0.5
 anchor_right = 0.455
 anchor_bottom = 0.5
-offset_left = -87.16
-offset_top = -44.0
-offset_right = 195.84
-offset_bottom = 236.0
+offset_left = -61.160034
+offset_top = -16.0
+offset_right = 221.83997
+offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -110,6 +110,7 @@ text = "Jogar
 "
 
 [node name="Opções" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -176,7 +177,7 @@ theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
 [node name="Logo-1" type="Sprite2D" parent="."]
-position = Vector2(575, 143.125)
+position = Vector2(577.00006, 185.00002)
 scale = Vector2(0.545, 0.545)
 texture = ExtResource("4_m13hv")
 

@@ -5,8 +5,9 @@ var cell_size: int = 36
 var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @export var start : bool = false
 @onready var head : Sprite2D = $head
-@onready var Pause: Control = $"../UI_Pause/Pause"
+@onready var vel_ctrl := $opcoes
 @export var localsnake := Vector2(2, 4)
+@export var vel_snake : float = 0.3
 var min_screen_x : int = 216
 var min_screen_y : int = 36
 var max_screen_x : int = 900
@@ -19,13 +20,14 @@ signal moved(old_pos: Vector2, new_pos: Vector2)
 
 
 func _ready():
+	vel_ctrl.connect("snake_vel", Callable(self, "_speed_ctrl"))
 	position = position.snapped(Vector2(cell_size, cell_size))
 
 func _process(delta):
 	get_input()
 	move_timer -= delta
 	if move_timer <= 0:
-		move_timer = 0.3
+		move_timer = vel_snake
 		move_snake()
 
 func get_input():
@@ -60,9 +62,6 @@ func grow(amount: int = 1) -> void:
 
 func Die():
 	get_tree().change_scene_to_file("res://scenes/game/game_over.tscn")
-
-func pause():
-	Pause.visible = true
 	
 func moved_snake():
 	if not start:
@@ -72,3 +71,6 @@ func moved_snake():
 	position += direction * cell_size
 	
 	emit_signal("moved", old_pos, position)
+	
+func _speed_ctrl(speed: float) -> void:
+	vel_snake = speed

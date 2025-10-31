@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0ccfk6tsvi0k"]
+[gd_scene load_steps=14 format=3 uid="uid://c0ccfk6tsvi0k"]
 
 [ext_resource type="Texture2D" uid="uid://cgn826nxrd5yo" path="res://assets/icons/config.png" id="1_3puiw"]
+[ext_resource type="Script" uid="uid://takwokcwxbme" path="res://scenes/menu/opcoes/opções.gd" id="1_8ix2f"]
 [ext_resource type="FontFile" uid="uid://drjgeh04gkqph" path="res://assets/fonts/outfit/Outfit-Medium.ttf" id="2_gxlvj"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="2_sdx4i"]
 [ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="4_8ix2f"]
+[ext_resource type="PackedScene" uid="uid://d1krvh5kvdjnt" path="res://elements/button/btn-home/btn-home.tscn" id="6_bldgd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok7gl"]
 bg_color = Color(0.75620705, 0.8506858, 0.9335078, 1)
@@ -32,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ix2f")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -93,7 +96,7 @@ text = "Som: "
 
 [node name="btn-som" type="Button" parent="menu/p-som"]
 layout_mode = 0
-offset_left = 185.0
+offset_left = 151.0
 offset_top = 15.0
 offset_right = 357.0
 offset_bottom = 64.0
@@ -106,7 +109,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ix2f")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_bldgd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
-text = "ligado"
+text = "desligado"
 alignment = 2
 
 [node name="p-velocidade" type="Panel" parent="menu"]
@@ -180,3 +183,12 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
 text = "português"
 alignment = 2
+
+[node name="home" parent="." instance=ExtResource("6_bldgd")]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 75.0
+offset_bottom = 75.0
+
+[connection signal="pressed" from="menu/p-velocidade/btn-velocidade" to="." method="_on_btnvelocidade_pressed"]
