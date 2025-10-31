@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://50prxkjtyan5" path="res://scenes/game/game_over.gd" id="1_b3plk"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_e80lq"]
 [ext_resource type="Texture2D" uid="uid://ba78h6n8efrev" path="res://assets/sprites/snake/tail/yellow_tail_right.png" id="4_e80lq"]
+[ext_resource type="Texture2D" uid="uid://b2fgn5mtlgbgl" path="res://assets/icons/trophy.png" id="5_62e75"]
 [ext_resource type="Texture2D" uid="uid://bdhhlq7a4bsc" path="res://assets/sprites/snake/body/body_horizontal.png" id="5_jhs4t"]
 [ext_resource type="Texture2D" uid="uid://csvj7wgm7q514" path="res://assets/sprites/snake/died/death_right_04.png" id="6_62e75"]
-[ext_resource type="PackedScene" uid="uid://cyqpmftfk7u11" path="res://scenes/default/score.tscn" id="7_jhs4t"]
 [ext_resource type="PackedScene" uid="uid://b353ituo5j5ix" path="res://UI/cronometro/cronometro.tscn" id="8_62e75"]
 [ext_resource type="PackedScene" uid="uid://df0u1w33tqsat" path="res://UI/cronometro/tempo.tscn" id="9_gjx6a"]
 
@@ -96,12 +96,27 @@ offset_right = 736.0
 offset_bottom = 310.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gdedy")
 
-[node name="score" parent="score" instance=ExtResource("7_jhs4t")]
-layout_mode = 0
+[node name="scorepanel" type="Control" parent="score"]
+anchors_preset = 0
 offset_left = 48.0
-offset_top = 22.0
-offset_right = 48.0
-offset_bottom = 22.0
+offset_top = 29.0
+offset_right = 88.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="score/scorepanel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -8.0
+offset_right = 172.0
+offset_bottom = 75.0
+pivot_offset = Vector2(52, 42)
+theme_override_font_sizes/font_size = 60
+text = "000"
+
+[node name="Sprite2D" type="Sprite2D" parent="score/scorepanel"]
+position = Vector2(34, 35)
+scale = Vector2(0.638, 0.6)
+texture = ExtResource("5_62e75")
 
 [node name="cronometro" parent="score" instance=ExtResource("8_62e75")]
 layout_mode = 1
@@ -112,10 +127,11 @@ offset_bottom = 93.0
 
 [node name="Cronometro" parent="score" instance=ExtResource("9_gjx6a")]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 89.0
-offset_right = 216.0
-offset_bottom = 134.0
+offset_left = 137.0
+offset_top = 91.0
+offset_right = 219.0
+offset_bottom = 136.0
+script = null
 
 [node name="menu" type="VBoxContainer" parent="."]
 layout_mode = 1

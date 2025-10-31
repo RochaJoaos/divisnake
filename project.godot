@@ -15,6 +15,10 @@ run/main_scene="uid://b7bv4apf7s0ya"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scenes/default/global.gd"
+
 [global_group]
 
 snake=""

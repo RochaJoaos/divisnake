@@ -8,6 +8,8 @@ extends Node2D
 @onready var pivo: Label = $Label_pivo    # referencia para a label que mostra o valor do pivô
 @onready var resultado_label: Label = $Label_resultado # referência para a label que mostra "Correto" ou "Errado"
 @onready var score_script := $score
+signal record(score: int)
+
 @onready var snake := $snake
 @onready var tail := $tail
 @onready var life := $life
@@ -71,6 +73,7 @@ func on_numero_comido(valor:int) -> void:
 			if acertos % 5 == 0:
 				_aumentar_dificuldade()
 			tail.visible = false
+			Global.records = score_script.pontos
 		else:
 			life.your_life -= 1
 

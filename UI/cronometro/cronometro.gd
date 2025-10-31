@@ -30,3 +30,4 @@ func _atualiza_texto() -> void:
 	var m := int(tempo) / 60
 	var s := int(tempo) % 60
 	text = "%02d:%02d" % [m, s]
+	Global.tempo = text
