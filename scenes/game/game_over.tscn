@@ -212,4 +212,5 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_62e75")
 text = "Menu Inicial"
 
 [connection signal="pressed" from="menu/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="menu/Regras" to="." method="_on_regras_pressed"]
 [connection signal="pressed" from="menu/Menu_inicial" to="." method="_on_menu_inicial_pressed"]

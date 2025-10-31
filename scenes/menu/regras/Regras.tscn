@@ -1,4 +1,22 @@
-[gd_scene format=3 uid="uid://cemckp1o6eymw"]
+[gd_scene load_steps=6 format=3 uid="uid://cemckp1o6eymw"]
+
+[ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="1_uy8kq"]
+[ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="2_gphq2"]
+[ext_resource type="PackedScene" uid="uid://d1krvh5kvdjnt" path="res://elements/button/btn-home/btn-home.tscn" id="2_uy8kq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8rgr"]
+bg_color = Color(0.75686276, 0.8509804, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gphq2"]
+bg_color = Color(0.3254902, 0.6039216, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Regras" type="Control"]
 layout_mode = 3
@@ -7,3 +25,127 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8rgr")
+
+[node name="Titulo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -28.0
+offset_right = 71.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Titulo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -466.5
+offset_top = -97.0
+offset_right = -75.5
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
+
+[node name="Panel" type="Panel" parent="Titulo/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 605.0
+offset_top = 1.0
+offset_right = 545.5
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
+
+[node name="Titulo" type="Label" parent="Titulo"]
+layout_mode = 1
+offset_left = 17.5
+offset_top = -248.0
+offset_right = 162.5
+offset_bottom = -191.0
+theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
+theme_override_fonts/font = ExtResource("1_uy8kq")
+theme_override_font_sizes/font_size = 45
+text = "Regras"
+
+[node name="Regras_text" type="Label" parent="Titulo"]
+layout_mode = 0
+offset_left = -465.5
+offset_top = -151.0
+offset_right = -253.5
+offset_bottom = -113.0
+theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
+theme_override_fonts/font = ExtResource("2_gphq2")
+theme_override_font_sizes/font_size = 30
+text = "🕹️ Como Jogar"
+
+[node name="Label" type="Label" parent="Titulo/Regras_text"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 69.0
+offset_right = 616.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 14
+text = "Observe o número principal na esquerda da tela (exemplo: 24).
+
+Mova a cobra usando as setas do teclado (⬆️⬇️⬅️➡️).
+
+Colete os números divisores do número principal (ex: 1, 2, 3, 4, 
+6, 8, 12, 24).
+
+Evite os números errados!
+
+Se pegar um número que não é divisor, a cobra encurta e 
+você perde pontos.
+
+Continue até o tempo acabar ou até a cobra colidir com ela mesma!"
+
+[node name="Pontuação" type="Label" parent="Titulo"]
+layout_mode = 0
+offset_left = 128.5
+offset_top = -151.0
+offset_right = 340.5
+offset_bottom = -113.0
+theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
+theme_override_fonts/font = ExtResource("1_uy8kq")
+theme_override_font_sizes/font_size = 30
+text = "💡 Pontuação"
+
+[node name="Label" type="Label" parent="Titulo/Pontuação"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 65.0
+offset_right = 569.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 14
+text = "✅ Acertar um divisor: +10 pontos.
+
+❌ Pegar número incorreto: -5 pontos e a cobra encurta.
+
+💥 Colidir com o próprio corpo ou perder todas as 
+partes: Fim de jogo."
+
+[node name="home" parent="." instance=ExtResource("2_uy8kq")]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 75.0
+offset_bottom = 75.0
