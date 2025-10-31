@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccxfc4p2vvpdm"]
+[gd_scene load_steps=2 format=3 uid="uid://ccxfc4p2vvpdm"]
 
 [ext_resource type="Texture2D" uid="uid://bdhhlq7a4bsc" path="res://assets/sprites/snake/body/body_horizontal.png" id="1_2fmr8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vqt3"]
-size = Vector2(36, 36)
-
-[node name="body" type="CharacterBody2D"]
+[node name="body" type="Node2D"]
 light_mask = 512
 visibility_layer = 512
 
@@ -14,7 +11,3 @@ position = Vector2(-37.00002, -14.999993)
 scale = Vector2(0.036, 0.036)
 texture = ExtResource("1_2fmr8")
 offset = Vector2(1527.7783, 916.6665)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(18, 18)
-shape = SubResource("RectangleShape2D_1vqt3")

@@ -9,6 +9,7 @@ extends Node2D
 @onready var resultado_label: Label = $Label_resultado # referência para a label que mostra "Correto" ou "Errado"
 @onready var score_script := $score
 @onready var snake := $snake
+@onready var tail := $tail
 @onready var life := $life
 
 const LIMITE_HISTORICO := 10   
@@ -69,6 +70,7 @@ func on_numero_comido(valor:int) -> void:
 			print("comi:", height)
 			if acertos % 5 == 0:
 				_aumentar_dificuldade()
+			tail.visible = false
 		else:
 			life.your_life -= 1
 
@@ -128,7 +130,7 @@ func _aumentar_dificuldade() -> void:
 
 func _on_snake_moved(old_pos: Vector2, new_pos: Vector2) -> void:
 	var last_pos = old_pos
-
+	tail.position = old_pos
 	for corpo in body_parts:
 		var temp = corpo.position
 		corpo.position = last_pos
