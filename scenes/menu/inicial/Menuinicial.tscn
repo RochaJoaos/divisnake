@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7bv4apf7s0ya"]
+[gd_scene load_steps=10 format=3 uid="uid://b7bv4apf7s0ya"]
 
 [ext_resource type="Texture2D" uid="uid://dkecmccv0u1cp" path="res://assets/sprites/background/testecinza.png" id="1_5fx2x"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_5fx2x"]
 [ext_resource type="StyleBox" uid="uid://d3v8pofwlsoy7" path="res://assets/styles/hover-laranja.tres" id="3_w47o8"]
 [ext_resource type="Texture2D" uid="uid://dcecitsfqerb2" path="res://assets/icons/logo-1.png" id="4_m13hv"]
-[ext_resource type="FontFile" uid="uid://dprtji2yhm160" path="res://assets/fonts/Minecraft.ttf" id="4_w47o8"]
 [ext_resource type="PackedScene" uid="uid://bh8q3c8mlkper" path="res://elements/button/btn-feedback/avaliar.tscn" id="6_5fx2x"]
 
 [sub_resource type="GDScript" id="GDScript_xssau"]
@@ -26,7 +25,7 @@ func Botao_Jogar_press() -> void:
 
 
 func Botao_opcoes_press() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/menu/opcoes/Opções.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/menu/regras/Regras.tscn\")
 
 
 func Botao_Creditos_press() -> void:
@@ -110,8 +109,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Jogar
 "
 
-[node name="Opções" type="Button" parent="VBoxContainer"]
-visible = false
+[node name="Regras" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -124,7 +122,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
-text = "Opções"
+text = "Regras"
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -173,7 +171,6 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_constants/shadow_offset_y = 3
-theme_override_fonts/font = ExtResource("4_w47o8")
 theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
@@ -186,6 +183,6 @@ texture = ExtResource("4_m13hv")
 position = Vector2(512, 570)
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
-[connection signal="pressed" from="VBoxContainer/Opções" to="." method="Botao_opcoes_press"]
+[connection signal="pressed" from="VBoxContainer/Regras" to="." method="Botao_opcoes_press"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="Botao_Creditos_press"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="Botao_sair_press"]
