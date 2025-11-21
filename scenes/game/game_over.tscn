@@ -180,7 +180,6 @@ text = "Regras
 "
 
 [node name="Configuração" type="Button" parent="menu"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -213,4 +212,5 @@ text = "Menu Inicial"
 
 [connection signal="pressed" from="menu/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="menu/Regras" to="." method="_on_regras_pressed"]
+[connection signal="pressed" from="menu/Configuração" to="." method="_on_configuração_pressed"]
 [connection signal="pressed" from="menu/Menu_inicial" to="." method="_on_menu_inicial_pressed"]

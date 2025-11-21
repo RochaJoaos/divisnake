@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 @export var direction: Vector2 = Vector2.RIGHT
 var cell_size: int = 36
@@ -7,7 +7,7 @@ var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @onready var head : Sprite2D = $head
 @onready var vel_ctrl := $opcoes
 @export var localsnake := Vector2(2, 4)
-@export var vel_snake : float = 0.3
+@export var vel_snake : float = Global.snake_velocity
 var min_screen_x : int = 216
 var min_screen_y : int = 36
 var max_screen_x : int = 900

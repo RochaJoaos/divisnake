@@ -6,6 +6,7 @@
 size = Vector2(36, 36)
 
 [node name="tail" type="CharacterBody2D"]
+position = Vector2(-36, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(18, 18)

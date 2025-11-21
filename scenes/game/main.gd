@@ -72,7 +72,6 @@ func on_numero_comido(valor:int) -> void:
 			print("comi:", height)
 			if acertos % 5 == 0:
 				_aumentar_dificuldade()
-			tail.visible = false
 			Global.records = score_script.pontos
 		else:
 			life.your_life -= 1
@@ -143,7 +142,12 @@ func spawn_body():
 	var body = body_scene.instantiate()
 	add_child(body)
 	body_parts.append(body)
+	body.visible = false
+	await get_tree().create_timer(0.3).timeout
+	body.visible = true
 	
+	
+
 	
 
 	
