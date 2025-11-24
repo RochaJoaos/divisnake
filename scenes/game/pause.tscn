@@ -64,7 +64,7 @@ anchor_bottom = 0.5
 offset_left = -156.30396
 offset_top = -81.000015
 offset_right = 167.6961
-offset_bottom = 142.75
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -101,7 +101,6 @@ text = "Regras
 "
 
 [node name="Configuração" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)

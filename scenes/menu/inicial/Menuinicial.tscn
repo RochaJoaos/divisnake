@@ -14,11 +14,9 @@ script/source = "extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func Botao_Jogar_press() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/menu/modo/Modo de jogo.tscn\")
@@ -30,6 +28,9 @@ func Botao_opcoes_press() -> void:
 
 func Botao_Creditos_press() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/menu/creditos/Creditos.tscn\")
+
+func _on_opções_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/menu/opcoes/Opções.tscn\")
 
 func Botao_sair_press() -> void:
 	get_tree().quit()
@@ -90,10 +91,10 @@ anchor_left = 0.455
 anchor_top = 0.5
 anchor_right = 0.455
 anchor_bottom = 0.5
-offset_left = -68.26257
-offset_top = -26.715027
-offset_right = 214.73743
-offset_bottom = 157.28497
+offset_left = -83.2626
+offset_top = -101.71503
+offset_right = 221.83997
+offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -126,6 +127,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
 theme_override_styles/hover = ExtResource("3_w47o8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Regras"
+
+[node name="Opções" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5fx2x")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/hover = ExtResource("3_w47o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
+text = "Opções"
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -178,14 +194,15 @@ theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
 [node name="Logo-1" type="Sprite2D" parent="."]
-position = Vector2(597, 144.00002)
-scale = Vector2(0.545, 0.545)
+position = Vector2(590.00006, 126)
+scale = Vector2(0.44880056, 0.44880056)
 texture = ExtResource("4_m13hv")
 
 [node name="avaliar" parent="." instance=ExtResource("6_5fx2x")]
-position = Vector2(512, 570)
+position = Vector2(511.99997, 551)
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
 [connection signal="pressed" from="VBoxContainer/Regras" to="." method="Botao_opcoes_press"]
+[connection signal="pressed" from="VBoxContainer/Opções" to="." method="_on_opções_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="Botao_Creditos_press"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="Botao_sair_press"]
