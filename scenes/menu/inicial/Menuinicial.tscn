@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7bv4apf7s0ya"]
+[gd_scene load_steps=11 format=3 uid="uid://b7bv4apf7s0ya"]
 
 [ext_resource type="Texture2D" uid="uid://dkecmccv0u1cp" path="res://assets/sprites/background/testecinza.png" id="1_5fx2x"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_5fx2x"]
@@ -41,16 +41,20 @@ modulate_color = Color(1, 0.958, 0.72, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cknpx"]
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_right = 1
 border_width_bottom = 5
-border_color = Color(0.42, 0.42, 0.42, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+border_color = Color(0.46207392, 0.41356435, 0.32635027, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 2.645)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5qsp"]
+draw_center = false
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bgl"]
 bg_color = Color(0.929412, 0.0901961, 0.133333, 1)
@@ -103,9 +107,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fx2x")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_cknpx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bgl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m5qsp")
 theme_override_styles/hover = ExtResource("3_w47o8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cknpx")
 text = "Jogar
 "
 
@@ -175,7 +178,7 @@ theme_override_font_sizes/font_size = 70
 text = "Divisnake"
 
 [node name="Logo-1" type="Sprite2D" parent="."]
-position = Vector2(571.8975, 152.28502)
+position = Vector2(597, 144.00002)
 scale = Vector2(0.545, 0.545)
 texture = ExtResource("4_m13hv")
 

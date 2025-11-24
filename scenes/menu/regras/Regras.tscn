@@ -1,22 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cemckp1o6eymw"]
+[gd_scene load_steps=11 format=3 uid="uid://cemckp1o6eymw"]
 
 [ext_resource type="FontFile" uid="uid://cy4b5k8w4xkge" path="res://assets/fonts/outfit/Outfit-Bold.ttf" id="1_uy8kq"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="2_gphq2"]
+[ext_resource type="Texture2D" uid="uid://dpwagc55ida5b" path="res://assets/sprites/regras/control.png" id="2_og04n"]
 [ext_resource type="PackedScene" uid="uid://d1krvh5kvdjnt" path="res://elements/button/btn-home/btn-home.tscn" id="2_uy8kq"]
+[ext_resource type="PackedScene" uid="uid://dqyivelr1p5yg" path="res://scenes/game/snake/head-snake.tscn" id="3_ftlqi"]
+[ext_resource type="PackedScene" uid="uid://cw52mughpj7cc" path="res://scenes/game/snake/tail-snake.tscn" id="4_2aovq"]
+[ext_resource type="Texture2D" uid="uid://bix2x8drjp1t4" path="res://assets/sprites/regras/Captura de tela 2025-11-24 132847.png" id="6_ftlqi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8rgr"]
-bg_color = Color(0.75686276, 0.8509804, 0.93333334, 1)
+bg_color = Color(0.70980394, 0.9607843, 0.74509805, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gphq2"]
-bg_color = Color(0.3254902, 0.6039216, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+bg_color = Color(0.32156864, 0.69411767, 0.40392157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.16078432)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c61b1"]
+bg_color = Color(0.0751402, 0.212312, 0.0550049, 0.529412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Regras" type="Control"]
 layout_mode = 3
@@ -35,117 +44,153 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w8rgr")
 
-[node name="Titulo" type="Control" parent="."]
+[node name="regras" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -28.0
-offset_right = 71.5
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Titulo"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -466.5
-offset_top = -97.0
-offset_right = -75.5
-offset_bottom = 191.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
-
-[node name="Panel" type="Panel" parent="Titulo/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 605.0
-offset_top = 1.0
-offset_right = 545.5
-offset_bottom = -176.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
-
-[node name="Titulo" type="Label" parent="Titulo"]
-layout_mode = 1
-offset_left = 17.5
-offset_top = -248.0
-offset_right = 162.5
-offset_bottom = -191.0
+offset_left = 417.0
+offset_top = 76.0
+offset_right = 732.0
+offset_bottom = 133.0
 theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
 theme_override_fonts/font = ExtResource("1_uy8kq")
 theme_override_font_sizes/font_size = 45
-text = "Regras"
+text = "Regras do Jogo"
 
-[node name="Regras_text" type="Label" parent="Titulo"]
+[node name="controles" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 870.0
+offset_top = 163.0
+offset_right = -77.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
+
+[node name="Pontuação" type="Label" parent="controles"]
 layout_mode = 0
-offset_left = -465.5
-offset_top = -151.0
-offset_right = -253.5
-offset_bottom = -113.0
-theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
-theme_override_fonts/font = ExtResource("2_gphq2")
-theme_override_font_sizes/font_size = 30
-text = "🕹️ Como Jogar"
-
-[node name="Label" type="Label" parent="Titulo/Regras_text"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 69.0
-offset_right = 616.0
-offset_bottom = 404.0
-theme_override_font_sizes/font_size = 14
-text = "Observe o número principal na esquerda da tela (exemplo: 24).
-
-Mova a cobra usando as setas do teclado (⬆️⬇️⬅️➡️).
-
-Colete os números divisores do número principal (ex: 1, 2, 3, 4, 
-6, 8, 12, 24).
-
-Evite os números errados!
-
-Se pegar um número que não é divisor, a cobra encurta e 
-você perde pontos.
-
-Continue até o tempo acabar ou até a cobra colidir com ela mesma!"
-
-[node name="Pontuação" type="Label" parent="Titulo"]
-layout_mode = 0
-offset_left = 128.5
-offset_top = -151.0
-offset_right = 340.5
-offset_bottom = -113.0
-theme_override_colors/font_color = Color(0.14901961, 0.27450982, 0.3254902, 1)
+offset_left = 30.750061
+offset_top = 25.0
+offset_right = 164.75006
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.22951147, 0.286826, 0.25113934, 1)
 theme_override_fonts/font = ExtResource("1_uy8kq")
 theme_override_font_sizes/font_size = 30
-text = "💡 Pontuação"
+text = "Controles"
 
-[node name="Label" type="Label" parent="Titulo/Pontuação"]
+[node name="Control" type="Sprite2D" parent="controles"]
+position = Vector2(100.75, 204.99994)
+scale = Vector2(0.57641196, 0.57641196)
+texture = ExtResource("2_og04n")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 166.0
+offset_right = -301.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gphq2")
+
+[node name="pivo" type="Panel" parent="Panel2"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 65.0
-offset_right = 569.0
-offset_bottom = 227.0
-theme_override_font_sizes/font_size = 14
-text = "✅ Acertar um divisor: +10 pontos.
+offset_left = 40.0
+offset_top = 67.0
+offset_right = 220.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c61b1")
 
-❌ Pegar número incorreto: -5 pontos e a cobra encurta.
+[node name="Label_pivo" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 76.0
+offset_right = 180.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 88
+text = "24"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-💥 Colidir com o próprio corpo ou perder todas as 
-partes: Fim de jogo."
+[node name="snake" parent="Panel2" instance=ExtResource("3_ftlqi")]
+position = Vector2(407, 171)
+script = null
+
+[node name="tail" parent="Panel2/snake" instance=ExtResource("4_2aovq")]
+
+[node name="tail2" parent="Panel2/snake/tail" instance=ExtResource("4_2aovq")]
+position = Vector2(-35, 72)
+
+[node name="tail" parent="Panel2/snake/tail" instance=ExtResource("4_2aovq")]
+position = Vector2(-71, 72)
+
+[node name="tail3" parent="Panel2/snake/tail" instance=ExtResource("4_2aovq")]
+position = Vector2(-35, 0)
+
+[node name="tail4" parent="Panel2/snake/tail" instance=ExtResource("4_2aovq")]
+position = Vector2(-35, 36)
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 69.0
+offset_right = 527.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("2_gphq2")
+theme_override_font_sizes/font_size = 21
+text = "Colete os números 
+divisores do número pivô"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel2/Label"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 158.0
+offset_right = 461.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(0.14117648, 0.37254903, 0.22745098, 1)
+theme_override_fonts/font = ExtResource("2_gphq2")
+theme_override_font_sizes/font_size = 21
+text = "números divisiveis
+possuem resto zero"
+horizontal_alignment = 1
+
+[node name="CapturaDeTela20251124132847" type="Sprite2D" parent="Panel2/Label/Label"]
+position = Vector2(95, -80.99998)
+scale = Vector2(0.7906404, 0.7906404)
+texture = ExtResource("6_ftlqi")
+
+[node name="Label2" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 218.0
+offset_right = 219.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0.14180261, 0.37162787, 0.22549307, 1)
+theme_override_fonts/font = ExtResource("2_gphq2")
+theme_override_font_sizes/font_size = 24
+text = "Número pivô
+(Dividendo)"
+horizontal_alignment = 1
+
+[node name="Label_pivo2" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 156.0
+offset_right = 487.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 45
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="home" parent="." instance=ExtResource("2_uy8kq")]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 75.0
-offset_bottom = 75.0
+offset_left = 69.0
+offset_top = 77.0
+offset_right = 129.0
+offset_bottom = 137.0
