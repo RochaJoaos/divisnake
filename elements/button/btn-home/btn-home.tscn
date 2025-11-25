@@ -5,11 +5,9 @@
 [ext_resource type="Script" uid="uid://bjc4eivitx263" path="res://elements/button/btn-home/home.gd" id="1_sy3nw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy3nw"]
-bg_color = Color(1, 0.882353, 0, 1)
-border_width_left = 1
-border_width_right = 1
+bg_color = Color(0.32156864, 0.69411767, 0.40392157, 1)
 border_width_bottom = 5
-border_color = Color(1, 0.533333, 0, 1)
+border_color = Color(0.20795381, 0.4694506, 0.26587638, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -18,12 +16,12 @@ corner_radius_bottom_left = 10
 [node name="home" type="Button"]
 offset_right = 60.0
 offset_bottom = 60.0
-theme_override_styles/hover = ExtResource("1_j7gmh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sy3nw")
+theme_override_styles/hover = ExtResource("1_j7gmh")
 script = ExtResource("1_sy3nw")
 
 [node name="Home" type="Sprite2D" parent="."]
-position = Vector2(30, 30)
+position = Vector2(30, 27)
 texture = ExtResource("1_c7ers")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

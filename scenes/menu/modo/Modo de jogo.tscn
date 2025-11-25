@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://brsqps5rmp6tt"]
+[gd_scene load_steps=6 format=3 uid="uid://brsqps5rmp6tt"]
 
 [ext_resource type="PackedScene" uid="uid://cwapk460lwwh6" path="res://elements/cards/multiplayer-card/multiplayer.tscn" id="3_ulgee"]
 [ext_resource type="PackedScene" uid="uid://i1xuvvnj5qrj" path="res://elements/cards/singleplayer-card/singlepayer.tscn" id="4_byju4"]
-[ext_resource type="PackedScene" uid="uid://bh8q3c8mlkper" path="res://elements/button/btn-feedback/avaliar.tscn" id="4_nd3px"]
 [ext_resource type="PackedScene" uid="uid://d1krvh5kvdjnt" path="res://elements/button/btn-home/btn-home.tscn" id="6_byju4"]
 
 [sub_resource type="Theme" id="Theme_p10t2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jai32"]
-bg_color = Color(0.9329678, 0.9187431, 0.6793664, 1)
+bg_color = Color(0.70980394, 0.9607843, 0.74509805, 1)
 
 [node name="ModoDeJogo" type="Control"]
 layout_mode = 3
@@ -48,6 +47,3 @@ offset_left = 15.0
 offset_top = 15.0
 offset_right = 75.0
 offset_bottom = 75.0
-
-[node name="avaliar" parent="." instance=ExtResource("4_nd3px")]
-position = Vector2(512, 571)
