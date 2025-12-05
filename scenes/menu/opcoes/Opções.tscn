@@ -111,7 +111,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ix2f")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_bldgd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g3geo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hv0yn")
-text = "desligado"
+text = "ON"
 alignment = 2
 
 [node name="p-velocidade" type="Panel" parent="menu"]

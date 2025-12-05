@@ -14,6 +14,8 @@ signal record(score: int)
 @onready var tail := $tail
 @onready var life := $life
 
+
+
 const LIMITE_HISTORICO := 10   
 var historico_pivos: Array[int] = []
 var nivel_dificuldade := 1

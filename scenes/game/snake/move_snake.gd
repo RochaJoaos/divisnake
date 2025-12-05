@@ -6,6 +6,7 @@ var move_timer: float = 0.5 # tempo entre movimentos (velocidade da cobra)
 @export var start : bool = false
 @onready var head : Sprite2D = $head
 @onready var vel_ctrl := $opcoes
+@onready var som_comer := $som_comer  
 @export var localsnake := Vector2(2, 4)
 @export var vel_snake : float = Global.snake_velocity
 var min_screen_x : int = 216
@@ -58,6 +59,7 @@ func move_snake():
 
 func grow(amount: int = 1) -> void:
 	# chama essa função quando comer uma maçã, por exemplo
+	som_comer.play()
 	pending_growth += amount
 
 func Die():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7bv4apf7s0ya"]
+[gd_scene load_steps=12 format=3 uid="uid://b7bv4apf7s0ya"]
 
 [ext_resource type="Texture2D" uid="uid://dkecmccv0u1cp" path="res://assets/sprites/background/testecinza.png" id="1_5fx2x"]
 [ext_resource type="FontFile" uid="uid://cjkpfcnokcvo" path="res://assets/fonts/outfit/Outfit-SemiBold.ttf" id="3_5fx2x"]
 [ext_resource type="StyleBox" uid="uid://d3v8pofwlsoy7" path="res://assets/styles/hover-laranja.tres" id="3_w47o8"]
 [ext_resource type="Texture2D" uid="uid://dcecitsfqerb2" path="res://assets/icons/logo-1.png" id="4_m13hv"]
 [ext_resource type="PackedScene" uid="uid://bh8q3c8mlkper" path="res://elements/button/btn-feedback/avaliar.tscn" id="6_5fx2x"]
+[ext_resource type="AudioStream" uid="uid://doxw64eabepsp" path="res://assets/sons/BeepBox-Song.mp3" id="6_w47o8"]
 
 [sub_resource type="GDScript" id="GDScript_xssau"]
 script/source = "extends Control
@@ -197,6 +198,11 @@ texture = ExtResource("4_m13hv")
 
 [node name="avaliar" parent="." instance=ExtResource("6_5fx2x")]
 position = Vector2(511.99997, 551)
+
+[node name="som_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_w47o8")
+volume_db = -18.86
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="Botao_Jogar_press"]
 [connection signal="pressed" from="VBoxContainer/Regras" to="." method="Botao_opcoes_press"]
